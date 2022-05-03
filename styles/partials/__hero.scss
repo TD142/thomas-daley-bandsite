@@ -4,4 +4,8 @@
   height: 60vw;
   display: flex;
   align-items: center;
+
+  &__title {
+    margin: 0 1rem;
+  }
 }

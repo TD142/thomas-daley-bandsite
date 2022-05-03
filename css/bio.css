@@ -77,6 +77,13 @@ p {
   display: flex;
   align-items: center;
 }
+.hero__title {
+  margin: 0 1rem;
+}
+
+.main__wrapper {
+  margin: 1rem;
+}
 
 .article__image {
   width: 100%;
@@ -87,4 +94,12 @@ p {
 }
 .figure__images {
   width: 100%;
+  margin-bottom: 1rem;
+}
+
+.footer {
+  background: #323232;
+}
+.footer__container {
+  margin: 0 1rem;
 }/*# sourceMappingURL=bio.css.map */

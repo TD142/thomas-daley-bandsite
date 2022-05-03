@@ -1,0 +1,9 @@
+@use "./variables" as *;
+
+.footer {
+  background: $primary-black;
+
+  &__container {
+    margin: 0 1rem;
+  }
+}

@@ -1,3 +1,9 @@
+.main {
+  &__wrapper {
+    margin: 1rem;
+  }
+}
+
 .article {
   &__image {
     width: 100%;
@@ -8,5 +14,6 @@
   margin: 0;
   &__images {
     width: 100%;
+    margin-bottom: 1rem;
   }
 }
