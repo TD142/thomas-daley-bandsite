@@ -1,0 +1,16 @@
+@use "./variables" as *;
+.nav {
+  background-color: $primary-black;
+
+  &__title {
+    text-align: center;
+    color: $white;
+    margin-top: 0;
+  }
+
+  &__flex {
+    display: flex;
+    justify-content: space-between;
+    margin: 0 5rem;
+  }
+}
