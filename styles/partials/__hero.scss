@@ -1,11 +1,12 @@
 .hero {
-  background-image: url("/assets/images/hero-bio.jpg");
+  background-image: url("../assets/images/hero-bio.jpg");
   background-size: cover;
   height: 60vw;
   display: flex;
   align-items: center;
 
   &__title {
+    font-size: 1.8rem;
     margin: 0 1rem;
   }
 }

@@ -1,9 +1,30 @@
 @use "./variables" as *;
+@use "./mixins" as *;
 
 .footer {
   background: $primary-black;
 
   &__container {
     margin: 0 1rem;
+
+    @include tablet {
+      display: flex;
+    }
+  }
+
+  &__header {
+    color: $white;
+    font-weight: bold;
+  }
+
+  &__subtitle {
+    font-family: avenir-next-demi;
+    color: $white;
+  }
+
+  &__item {
+    color: $white;
+    font-weight: normal;
+    text-decoration: none;
   }
 }

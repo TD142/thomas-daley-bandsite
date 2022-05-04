@@ -9,6 +9,12 @@
 @mixin copy {
   font-size: 0.813rem;
   line-height: 1.125rem;
-  font-family: avenir-next-regular;
-  color: $silver;
+  font-family: avenir;
+  color: $primary-black;
+}
+
+@mixin tablet {
+  @media (min-width: $tablet) {
+    @content;
+  }
 }
