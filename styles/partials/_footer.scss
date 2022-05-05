@@ -6,15 +6,18 @@
 
   &__container {
     margin: 0 1rem;
+  }
 
+  &__wrapper {
     @include tablet {
       display: flex;
+      justify-content: space-between;
     }
   }
 
   &__header {
     color: $white;
-    font-weight: bold;
+    font-family: avenir;
   }
 
   &__subtitle {
@@ -26,5 +29,48 @@
     color: $white;
     font-weight: normal;
     text-decoration: none;
+  }
+
+  &__wrapper {
+    @include tablet {
+      display: flex;
+    }
+  }
+
+  &__images {
+    align-self: center;
+    margin-right: 7.5rem;
+  }
+
+  &__image {
+    padding-right: 2rem;
+    height: 1.5rem;
+  }
+
+  &__bottom {
+    @include tablet {
+      display: flex;
+      justify-content: space-between;
+    }
+  }
+
+  &__logo {
+    color: $white;
+    font-family: avenir;
+    margin-top: 2rem;
+
+    @include tablet {
+      display: none;
+    }
+
+    &--display {
+      color: $white;
+      font-family: avenir;
+      display: none;
+
+      @include tablet {
+        display: block;
+      }
+    }
   }
 }
