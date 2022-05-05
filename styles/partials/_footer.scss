@@ -6,6 +6,9 @@
 
   &__container {
     margin: 0 1rem;
+    @include tablet {
+      margin: 0 2rem;
+    }
   }
 
   &__wrapper {
@@ -17,7 +20,7 @@
 
   &__header {
     color: $white;
-    font-family: avenir;
+    font-family: avenir-next-demi;
   }
 
   &__subtitle {
@@ -39,7 +42,7 @@
 
   &__images {
     align-self: center;
-    margin-right: 7.5rem;
+    margin: 1.2rem 11rem 0 0;
   }
 
   &__image {
@@ -51,6 +54,7 @@
     @include tablet {
       display: flex;
       justify-content: space-between;
+      line-height: 1.25rem;
     }
   }
 
@@ -66,6 +70,7 @@
     &--display {
       color: $white;
       font-family: avenir;
+      font-size: 1.5rem;
       display: none;
 
       @include tablet {

@@ -1,3 +1,5 @@
+@use "./mixins" as *;
+
 .hero {
   background-image: url("../assets/images/hero-bio.jpg");
   background-size: cover;
@@ -8,5 +10,11 @@
   &__title {
     font-size: 1.8rem;
     margin: 0 1rem;
+
+    @include tablet {
+      font-size: 3.75rem;
+      line-height: 4.25rem;
+      margin-left: 2.25rem;
+    }
   }
 }

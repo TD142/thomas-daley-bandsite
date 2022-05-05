@@ -26,11 +26,18 @@ h1 {
   padding: 24px 0px 16px 0px;
   font-family: avenir-next-demi;
   margin: 0;
+  color: #323232;
+}
+@media (min-width: 768px) {
+  h1 {
+    font-size: 2.25rem;
+    line-height: 2.75rem;
+    padding: 48px 0 36px 0;
+  }
 }
 
 h3 {
-  font-family: avenir;
-  font-size: 0.875rem;
+  font-size: 1rem;
   line-height: 1.375rem;
   color: #ffffff;
 }
@@ -41,6 +48,12 @@ p {
   font-family: avenir;
   color: #323232;
 }
+@media (min-width: 768px) {
+  p {
+    font-size: 0.875rem;
+    line-height: 1.375rem;
+  }
+}
 
 .hero__title {
   font-size: 1.5rem;
@@ -50,8 +63,8 @@ p {
 }
 
 .article__secondary__header {
-  font-family: avenir-next-demi;
-  color: #323232;
+  font-weight: 500;
+  color: #000000;
 }
 .article__item {
   font-family: avenir-next-demi;
@@ -92,6 +105,7 @@ p {
 }
 .nav .list__item {
   border-bottom: 3px solid #ffffff;
+  font-family: avenir-next-demi;
 }
 .nav .list__items {
   margin-bottom: 0rem;
@@ -118,16 +132,29 @@ p {
   font-size: 1.8rem;
   margin: 0 1rem;
 }
+@media (min-width: 768px) {
+  .hero__title {
+    font-size: 3.75rem;
+    line-height: 4.25rem;
+    margin-left: 2.25rem;
+  }
+}
 
 .main__wrapper {
-  margin: 1rem;
+  margin: 0 1rem;
+}
+@media (min-width: 768px) {
+  .main__wrapper {
+    margin: 0 2.25rem;
+  }
 }
 
 @media (min-width: 768px) {
   .article__wrapper {
     display: flex;
     align-items: flex-end;
-    justify-content: space-between;
+    -moz-column-gap: 2rem;
+         column-gap: 2rem;
   }
 }
 .article__image {
@@ -138,14 +165,17 @@ p {
     margin: 0 64px;
   }
 }
-@media (min-width: 768px) {
-  .article__text {
-    width: 18rem;
-  }
-}
-
 .figure {
   margin: 0;
+  background: #fafafa;
+}
+.figure__container {
+  margin: 0 1rem;
+}
+@media (min-width: 768px) {
+  .figure__container {
+    margin: 0 2rem;
+  }
 }
 .figure__images {
   width: 100%;
@@ -171,6 +201,11 @@ p {
   margin: 0 1rem;
 }
 @media (min-width: 768px) {
+  .footer__container {
+    margin: 0 2rem;
+  }
+}
+@media (min-width: 768px) {
   .footer__wrapper {
     display: flex;
     justify-content: space-between;
@@ -178,7 +213,7 @@ p {
 }
 .footer__header {
   color: #ffffff;
-  font-family: avenir;
+  font-family: avenir-next-demi;
 }
 .footer__subtitle {
   font-family: avenir-next-demi;
@@ -196,7 +231,7 @@ p {
 }
 .footer__images {
   align-self: center;
-  margin-right: 7.5rem;
+  margin: 1.2rem 11rem 0 0;
 }
 .footer__image {
   padding-right: 2rem;
@@ -206,6 +241,7 @@ p {
   .footer__bottom {
     display: flex;
     justify-content: space-between;
+    line-height: 1.25rem;
   }
 }
 .footer__logo {
@@ -221,6 +257,7 @@ p {
 .footer__logo--display {
   color: #ffffff;
   font-family: avenir;
+  font-size: 1.5rem;
   display: none;
 }
 @media (min-width: 768px) {
