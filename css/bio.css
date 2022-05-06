@@ -62,17 +62,31 @@ p {
   color: #ffffff;
 }
 
-.article__secondary__header {
+.article__subtitle {
   font-weight: 500;
   color: #000000;
+}
+@media (min-width: 768px) {
+  .article__subtitle {
+    font-size: 1.5rem;
+  }
 }
 .article__item {
   font-family: avenir-next-demi;
   color: #323232;
 }
+@media (min-width: 768px) {
+  .article__item--large {
+    font-size: 1.2rem;
+    line-height: 1.8rem;
+  }
+}
+
+.header {
+  background-color: #323232;
+}
 
 .nav {
-  background-color: #323232;
   display: flex;
   flex-direction: column;
 }
@@ -80,6 +94,12 @@ p {
   .nav {
     flex-direction: row;
     align-items: flex-end;
+  }
+}
+@media (min-width: 1280px) {
+  .nav {
+    max-width: 1080px;
+    margin: 0 auto;
   }
 }
 .nav__title {
@@ -90,7 +110,9 @@ p {
 }
 @media (min-width: 768px) {
   .nav__title {
-    margin-left: 16px;
+    margin-left: 36px;
+    font-size: 1.8rem;
+    padding: 1.4rem 0;
   }
 }
 .nav .list {
@@ -118,6 +140,7 @@ p {
 @media (min-width: 768px) {
   .nav .list__items {
     margin-right: 4rem;
+    padding-bottom: 2.2rem;
   }
 }
 
@@ -146,6 +169,12 @@ p {
 @media (min-width: 768px) {
   .main__wrapper {
     margin: 0 2.25rem;
+  }
+}
+@media (min-width: 1280px) {
+  .main__wrapper {
+    max-width: 1080px;
+    margin: 0 auto;
   }
 }
 
@@ -177,13 +206,19 @@ p {
     margin: 0 2rem;
   }
 }
+@media (min-width: 1280px) {
+  .figure__container {
+    max-width: 1080px;
+    margin: 0 auto;
+  }
+}
 .figure__images {
   width: 100%;
   margin-bottom: 1rem;
 }
 @media (min-width: 768px) {
   .figure__images {
-    width: 30%;
+    width: 31%;
   }
 }
 @media (min-width: 768px) {
@@ -206,9 +241,21 @@ p {
   }
 }
 @media (min-width: 768px) {
+  .footer__container {
+    max-width: 1080px;
+    margin: 0 auto;
+  }
+}
+@media (min-width: 768px) {
   .footer__wrapper {
     display: flex;
     justify-content: space-between;
+  }
+}
+@media (min-width: 768px) {
+  .footer__wrapper-left {
+    display: flex;
+    gap: 1.8rem;
   }
 }
 .footer__header {
@@ -231,7 +278,11 @@ p {
 }
 .footer__images {
   align-self: center;
-  margin: 1.2rem 11rem 0 0;
+}
+@media (min-width: 768px) {
+  .footer__images {
+    margin: 1.2rem 0 0 0;
+  }
 }
 .footer__image {
   padding-right: 2rem;
@@ -239,8 +290,9 @@ p {
 }
 @media (min-width: 768px) {
   .footer__bottom {
+    -moz-column-gap: 3rem;
+         column-gap: 3rem;
     display: flex;
-    justify-content: space-between;
     line-height: 1.25rem;
   }
 }

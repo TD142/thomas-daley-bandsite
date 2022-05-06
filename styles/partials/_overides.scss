@@ -66,12 +66,23 @@ p {
 }
 
 .article {
-  &__secondary__header {
+  &__subtitle {
     font-weight: 500;
     color: $secondary-black;
+
+    @include tablet {
+      font-size: 1.5rem;
+    }
   }
   &__item {
     font-family: avenir-next-demi;
     color: $primary-black;
+
+    &--large {
+      @include tablet {
+        font-size: 1.2rem;
+        line-height: 1.8rem;
+      }
+    }
   }
 }

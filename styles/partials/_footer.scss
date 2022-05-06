@@ -9,12 +9,23 @@
     @include tablet {
       margin: 0 2rem;
     }
+
+    @include tablet {
+      max-width: 1080px;
+      margin: 0 auto;
+    }
   }
 
   &__wrapper {
     @include tablet {
       display: flex;
       justify-content: space-between;
+    }
+    &-left {
+      @include tablet {
+        display: flex;
+        gap: 1.8rem;
+      }
     }
   }
 
@@ -42,7 +53,10 @@
 
   &__images {
     align-self: center;
-    margin: 1.2rem 11rem 0 0;
+
+    @include tablet {
+      margin: 1.2rem 0 0 0;
+    }
   }
 
   &__image {
@@ -52,8 +66,8 @@
 
   &__bottom {
     @include tablet {
+      column-gap: 3rem;
       display: flex;
-      justify-content: space-between;
       line-height: 1.25rem;
     }
   }

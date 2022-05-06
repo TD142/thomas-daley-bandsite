@@ -1,13 +1,22 @@
 @use "./variables" as *;
 @use "./mixins" as *;
-.nav {
+
+.header {
   background-color: $primary-black;
+}
+
+.nav {
   display: flex;
   flex-direction: column;
 
   @include tablet {
     flex-direction: row;
     align-items: flex-end;
+  }
+
+  @include desktop {
+    max-width: 1080px;
+    margin: 0 auto;
   }
 
   &__title {
@@ -17,7 +26,9 @@
     margin-top: 0;
 
     @include tablet {
-      margin-left: 16px;
+      margin-left: 36px;
+      font-size: 1.8rem;
+      padding: 1.4rem 0;
     }
   }
 
@@ -45,6 +56,7 @@
 
       @include tablet {
         margin-right: 4rem;
+        padding-bottom: 2.2rem;
       }
     }
   }

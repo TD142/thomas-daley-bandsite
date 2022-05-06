@@ -8,6 +8,10 @@
     @include tablet {
       margin: 0 2.25rem;
     }
+    @include desktop {
+      max-width: 1080px;
+      margin: 0 auto;
+    }
   }
 }
 
@@ -45,6 +49,11 @@
     @include tablet {
       margin: 0 2rem;
     }
+
+    @include desktop {
+      max-width: 1080px;
+      margin: 0 auto;
+    }
   }
 
   &__images {
@@ -52,7 +61,7 @@
     margin-bottom: 1rem;
 
     @include tablet {
-      width: 30%;
+      width: 31%;
     }
   }
   &__wrapper {
