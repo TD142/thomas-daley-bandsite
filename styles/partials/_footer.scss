@@ -10,8 +10,8 @@
       margin: 0 2rem;
     }
 
-    @include tablet {
-      max-width: 1080px;
+    @include desktop {
+      max-width: 1250px;
       margin: 0 auto;
     }
   }
@@ -24,7 +24,7 @@
     &-left {
       @include tablet {
         display: flex;
-        gap: 1.8rem;
+        gap: 2.8rem;
       }
     }
   }
@@ -35,14 +35,19 @@
   }
 
   &__subtitle {
-    font-family: avenir-next-demi;
-    color: $white;
+    font-family: avenir;
+    font-weight: 500;
+    color: $alabaster;
   }
 
   &__item {
-    color: $white;
+    color: $mercury;
     font-weight: normal;
     text-decoration: none;
+    &--nomargin {
+      margin-bottom: 0rem;
+      padding-bottom: 1rem;
+    }
   }
 
   &__wrapper {
@@ -66,9 +71,12 @@
 
   &__bottom {
     @include tablet {
-      column-gap: 3rem;
+      column-gap: 4rem;
       display: flex;
       line-height: 1.25rem;
+      white-space: nowrap;
+      font-size: 0.875rem;
+      margin-bottom: 4rem;
     }
   }
 
@@ -82,7 +90,7 @@
     }
 
     &--display {
-      color: $white;
+      color: $mercury;
       font-family: avenir;
       font-size: 1.5rem;
       display: none;

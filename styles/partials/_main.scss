@@ -9,7 +9,7 @@
       margin: 0 2.25rem;
     }
     @include desktop {
-      max-width: 1080px;
+      max-width: 1250px;
       margin: 0 auto;
     }
   }
@@ -27,9 +27,12 @@
   &__image {
     width: 100%;
   }
-  &__tablet {
+  &__container {
     @include tablet {
-      margin: 0 64px;
+      margin: 0 4rem;
+    }
+    @include desktop {
+      margin: 0 5.5rem;
     }
   }
 
@@ -51,7 +54,7 @@
     }
 
     @include desktop {
-      max-width: 1080px;
+      max-width: 1250px;
       margin: 0 auto;
     }
   }

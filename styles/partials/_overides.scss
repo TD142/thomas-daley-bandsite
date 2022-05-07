@@ -68,6 +68,8 @@ p {
 .article {
   &__subtitle {
     font-weight: 500;
+    font-size: 0.875rem;
+    line-height: 1.375rem;
     color: $secondary-black;
 
     @include tablet {
@@ -77,11 +79,16 @@ p {
   &__item {
     font-family: avenir-next-demi;
     color: $primary-black;
+    font-size: 0.98rem;
+    line-height: 1.375rem;
 
     &--large {
       @include tablet {
-        font-size: 1.2rem;
+        font-size: 1.4rem;
         line-height: 1.8rem;
+      }
+      @include desktop {
+        width: 62%;
       }
     }
   }
