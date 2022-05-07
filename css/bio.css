@@ -55,42 +55,6 @@ p {
   }
 }
 
-.hero__title {
-  font-size: 1.5rem;
-  line-height: 2rem;
-  font-weight: bold 700;
-  color: #ffffff;
-}
-
-.article__subtitle {
-  font-weight: 500;
-  font-size: 0.875rem;
-  line-height: 1.375rem;
-  color: #000000;
-}
-@media (min-width: 768px) {
-  .article__subtitle {
-    font-size: 1.5rem;
-  }
-}
-.article__item {
-  font-family: avenir-next-demi;
-  color: #323232;
-  font-size: 0.98rem;
-  line-height: 1.375rem;
-}
-@media (min-width: 768px) {
-  .article__item--large {
-    font-size: 1.4rem;
-    line-height: 1.8rem;
-  }
-}
-@media (min-width: 1280px) {
-  .article__item--large {
-    width: 62%;
-  }
-}
-
 .header {
   background-color: #323232;
 }
@@ -103,7 +67,7 @@ p {
   .nav {
     flex-direction: row;
     align-items: flex-end;
-    margin-left: 36px;
+    margin-left: 2.25rem;
   }
 }
 @media (min-width: 1280px) {
@@ -157,12 +121,22 @@ p {
   }
 }
 
-.hero {
-  background-image: url("../assets/images/hero-bio.jpg");
+.hero__title {
+  font-size: 1.5rem;
+  line-height: 2rem;
+  font-weight: bold 700;
+  color: #ffffff;
+}
+.hero__wrapper {
+  background: url(../assets/images/hero-bio.jpg);
   background-size: cover;
+  background-color: black;
   height: 60vw;
   display: flex;
   align-items: center;
+  overflow: hidden;
+  background-color: rgba(50, 50, 50, 0.5);
+  background-blend-mode: overlay;
 }
 .hero__container {
   width: 100%;
@@ -204,6 +178,34 @@ p {
   }
 }
 
+.article__subtitle {
+  font-weight: 500;
+  font-size: 0.875rem;
+  line-height: 1.375rem;
+  color: #000000;
+}
+@media (min-width: 768px) {
+  .article__subtitle {
+    font-size: 1.5rem;
+  }
+}
+.article__item {
+  font-family: avenir-next-demi;
+  color: #323232;
+  font-size: 0.98rem;
+  line-height: 1.375rem;
+}
+@media (min-width: 768px) {
+  .article__item--large {
+    font-size: 1.4rem;
+    line-height: 1.8rem;
+  }
+}
+@media (min-width: 1280px) {
+  .article__item--large {
+    width: 62%;
+  }
+}
 @media (min-width: 768px) {
   .article__wrapper {
     display: flex;
@@ -317,7 +319,7 @@ p {
 }
 @media (min-width: 768px) {
   .footer__images {
-    margin: 1.2rem 0 0 0;
+    margin: 1.35rem 0 0 0;
   }
 }
 .footer__image {
