@@ -76,7 +76,7 @@ a {
 }
 @media (min-width: 1280px) {
   .nav {
-    max-width: 1250px;
+    max-width: 1220px;
     margin: 0 auto;
   }
 }
@@ -156,7 +156,7 @@ a {
 }
 @media (min-width: 1280px) {
   .hero__container {
-    max-width: 1250px;
+    max-width: 1220px;
     margin: 0 auto;
   }
 }
@@ -192,7 +192,7 @@ a {
 }
 @media (min-width: 1280px) {
   .article__wrapper {
-    max-width: 1250px;
+    max-width: 1220px;
     margin: 0 auto;
   }
 }
@@ -210,7 +210,7 @@ a {
 }
 @media (min-width: 1280px) {
   .article__item--large {
-    width: 62%;
+    width: 64%;
   }
 }
 @media (min-width: 768px) {
@@ -250,7 +250,7 @@ a {
 }
 @media (min-width: 1280px) {
   .figure__container {
-    max-width: 1250px;
+    max-width: 1220px;
     margin: 0 auto;
   }
 }
@@ -288,7 +288,7 @@ a {
 }
 @media (min-width: 1280px) {
   .footer__container {
-    max-width: 1250px;
+    max-width: 1220px;
     margin: 0 auto;
   }
 }
