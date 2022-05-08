@@ -29,6 +29,17 @@
     }
   }
 
+  &__logo {
+    color: $mercury;
+    font-family: avenir;
+    font-size: 1.8rem;
+    display: none;
+
+    @include tablet {
+      display: block;
+    }
+  }
+
   &__header {
     color: $white;
     font-family: avenir-next-demi;
@@ -84,24 +95,13 @@
     }
   }
 
-  &__logo {
+  &__secondary-logo {
     color: $white;
     font-family: avenir;
     margin-top: 2rem;
 
     @include tablet {
       display: none;
-    }
-
-    &--display {
-      color: $mercury;
-      font-family: avenir;
-      font-size: 1.5rem;
-      display: none;
-
-      @include tablet {
-        display: block;
-      }
     }
   }
 }

@@ -1,20 +1,6 @@
 @use "./variables" as *;
 @use "./mixins" as *;
 
-.main {
-  &__wrapper {
-    margin: 0 1rem;
-
-    @include tablet {
-      margin: 0 2.25rem;
-    }
-    @include desktop {
-      max-width: 1250px;
-      margin: 0 auto;
-    }
-  }
-}
-
 .article {
   &__subtitle {
     font-weight: 500;
@@ -27,6 +13,19 @@
       font-size: 1.5rem;
     }
   }
+
+  &__wrapper {
+    margin: 0 1rem;
+
+    @include tablet {
+      margin: 0 2.25rem;
+    }
+    @include desktop {
+      max-width: 1250px;
+      margin: 0 auto;
+    }
+  }
+
   &__item {
     font-family: avenir-next-demi;
     color: $primary-black;
@@ -44,7 +43,7 @@
     }
   }
 
-  &__wrapper {
+  &__secondary-container {
     @include tablet {
       display: flex;
       align-items: flex-end;
