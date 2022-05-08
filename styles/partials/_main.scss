@@ -19,6 +19,7 @@
   &__subtitle {
     font-weight: 500;
     font-size: 0.875rem;
+    padding-top: 0.5rem;
     line-height: 1.375rem;
     color: $secondary-black;
 
@@ -48,6 +49,7 @@
       display: flex;
       align-items: flex-end;
       column-gap: 2rem;
+      padding-bottom: 1rem;
     }
   }
 
@@ -78,6 +80,7 @@
 
     @include tablet {
       margin: 0 2rem;
+      padding-bottom: 1.2rem;
     }
 
     @include desktop {
@@ -89,6 +92,11 @@
   &__images {
     width: 100%;
     margin-bottom: 1rem;
+    filter: grayscale(20);
+
+    &:hover {
+      filter: none;
+    }
 
     @include tablet {
       width: 31%;

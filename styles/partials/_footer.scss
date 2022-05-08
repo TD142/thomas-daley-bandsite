@@ -45,8 +45,12 @@
     font-weight: normal;
     text-decoration: none;
     &--nomargin {
-      margin-bottom: 0rem;
+      margin: 0;
       padding-bottom: 1rem;
+      @include tablet {
+        padding-bottom: 3rem;
+        font-size: 0.92rem;
+      }
     }
   }
 

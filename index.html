@@ -10,24 +10,30 @@
   <body>
     <header class="header">
       <nav class="nav">
-        <h1 class="nav__title">BANDSITE</h1>
+        <a href="#about">
+          <h1 class="nav__title">BANDSITE</h1>
+        </a>
         <ul class="list">
-          <li class="list__item list__items">Biography</li>
-          <li class="list__items list__items--grey">Shows</li>
+          <a class="list__item list__items" href="#about">
+            <li>Biography</li>
+          </a>
+          <a class="list__items list__items--grey" href="#">
+            <li>Shows</li>
+          </a>
         </ul>
       </nav>
     </header>
     <section class="hero">
       <div class="hero__wrapper">
         <div class="hero__container">
-        <h1 class="hero__title">The Bees Knees</h1>
-      </div>
+          <h1 class="hero__title">The Bees Knees</h1>
+        </div>
       </div>
     </section>
     <main class="main">
-      <div class="main__wrapper">
         <article class="article">
-          <h1 class="article__header">About the Musicians</h1>
+          <div class="main__wrapper">
+          <h1 id="about" class="article__header">About the Musicians</h1>
           <div class="article__container">
             <img
               class="article__image"
@@ -71,9 +77,9 @@
                   late 2021.
                 </p>
               </div>
-              </div>
             </div>
           </div>
+        </div>
         </article>
         <figure class="figure">
           <div class="figure__container">
@@ -126,8 +132,8 @@
               />
             </div>
           </div>
-        </figure>
-      </div>
+        </div>
+      </figure>
     </main>
     <footer class="footer">
       <section class="footer__container">
@@ -135,20 +141,25 @@
           <div class="footer__wrapper-left">
             <h1 class="footer__header">Get in Touch</h1>
             <div class="footer__images">
-              <img
-                class="footer__image"
-                src="./assets/icons/SVG/Icon-instagram.svg"
-                alt="instagram"
-              /><img
-                class="footer__image"
-                src="./assets/icons/SVG/Icon-facebook.svg"
-                alt="facebook"
-              />
-              <img
-                class="footer__image"
-                src="./assets/icons/SVG/Icon-twitter.svg"
-                alt="twitter"
-              />
+              <a href="https://www.instagram.com/" target="_blank">
+                <img
+                  class="footer__image"
+                  src="./assets/icons/SVG/Icon-instagram.svg"
+                  alt="instagram"
+              /></a>
+              <a href="https://facebook.com" target="_blank"
+                ><img
+                  class="footer__image"
+                  src="./assets/icons/SVG/Icon-facebook.svg"
+                  alt="facebook"
+              /></a>
+              <a href="https://twitter.com/" target="_blank">
+                <img
+                  class="footer__image"
+                  src="./assets/icons/SVG/Icon-twitter.svg"
+                  alt="twitter"
+                />
+              </a>
             </div>
           </div>
           <div class="footer_wrapper-right">
@@ -164,7 +175,9 @@
             <p class="footer__item">
               503 Broadway Penthouse,<br />New York, NY 10012, USA
             </p>
-            <a class="footer__item" href="">info@thebeesknees.com</a>
+            <a class="footer__item" href="mailto:info@thebeesknees.com"
+              >info@thebeesknees.com</a
+            >
           </div>
           <div>
             <p class="footer__subtitle">
@@ -174,7 +187,9 @@
               Booking Agent for <br />
               US / South America / Japan
             </p>
-            <a class="footer__item" href="">pearl.gregg@limitlessag.com</a>
+            <a class="footer__item" href="mailto:pearl.gregg@limitlessag.com"
+              >pearl.gregg@limitlessag.com</a
+            >
           </div>
 
           <div>
@@ -182,7 +197,9 @@
               Carson Whyte <br />ARCH Entertainment
             </p>
             <p class="footer__item">Booking Agent for <br />UK / EU / AU</p>
-            <a class="footer__item" href="">cwhyte@archentertainment.com</a>
+            <a class="footer__item" href="mailto:cwhyte@archentertainment.com"
+              >cwhyte@archentertainment.com</a
+            >
           </div>
         </div>
 
