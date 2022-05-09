@@ -27,12 +27,14 @@
         gap: 2.8rem;
       }
     }
+    &-right {
+      align-self: center;
+      margin-top: 0.4rem;
+    }
   }
 
   &__logo {
-    color: $mercury;
-    font-family: avenir;
-    font-size: 1.8rem;
+    width: 7.5rem;
     display: none;
 
     @include tablet {
@@ -96,9 +98,8 @@
   }
 
   &__secondary-logo {
-    color: $white;
-    font-family: avenir;
-    margin-top: 2rem;
+    margin: 4rem 0 1rem 0;
+    width: 7.5rem;
 
     @include tablet {
       display: none;

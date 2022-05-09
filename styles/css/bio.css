@@ -67,6 +67,15 @@ a {
   display: flex;
   flex-direction: column;
 }
+.nav__link {
+  display: flex;
+  justify-content: center;
+  align-self: center;
+}
+.nav__logo {
+  width: 7.5rem;
+  margin: 1.5rem 0;
+}
 @media (min-width: 768px) {
   .nav {
     flex-direction: row;
@@ -95,7 +104,7 @@ a {
 }
 .nav .list {
   display: flex;
-  margin: 0%;
+  margin: 0;
   padding: 0%;
 }
 @media (min-width: 768px) {
@@ -106,6 +115,7 @@ a {
 .nav .list__item {
   border-bottom: 3px solid #ffffff;
   font-family: avenir-next-demi;
+  margin-top: 0rem;
 }
 .nav .list__items {
   margin-bottom: 0rem;
@@ -125,7 +135,12 @@ a {
 @media (min-width: 768px) {
   .nav .list__items {
     margin-right: 4rem;
-    padding-bottom: 2.2rem;
+    padding-bottom: 1.4rem;
+  }
+}
+@media (min-width: 1280px) {
+  .nav .list__items {
+    padding: 2rem 0;
   }
 }
 
@@ -304,10 +319,12 @@ a {
     gap: 2.8rem;
   }
 }
+.footer__wrapper-right {
+  align-self: center;
+  margin-top: 0.4rem;
+}
 .footer__logo {
-  color: #e1e1e1;
-  font-family: avenir;
-  font-size: 1.8rem;
+  width: 7.5rem;
   display: none;
 }
 @media (min-width: 768px) {
@@ -368,9 +385,8 @@ a {
   }
 }
 .footer__secondary-logo {
-  color: #ffffff;
-  font-family: avenir;
-  margin-top: 2rem;
+  margin: 4rem 0 1rem 0;
+  width: 7.5rem;
 }
 @media (min-width: 768px) {
   .footer__secondary-logo {
