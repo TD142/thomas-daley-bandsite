@@ -74,7 +74,12 @@ a {
 }
 .nav__logo {
   width: 7.5rem;
-  margin: 1.5rem 0;
+  margin: 1.5rem 0rem 1rem 0rem;
+}
+@media (min-width: 768px) {
+  .nav__logo {
+    margin: 1.5rem 0rem 1.5rem 0rem;
+  }
 }
 @media (min-width: 768px) {
   .nav {
