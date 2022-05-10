@@ -3,21 +3,65 @@
 
 .hero {
   &__title {
-    font-size: 1.5rem;
+    font-size: 1.8rem;
     line-height: 2rem;
     font-weight: bold 700;
     color: $white;
+
+    &--shows {
+      width: 18rem;
+      padding-top: 1rem;
+
+      @include tablet {
+        width: 30rem;
+      }
+    }
+
+    @include tablet {
+      font-size: 3.75rem;
+      line-height: 4.25rem;
+    }
+  }
+  &__subtitle {
+    color: $white;
+    font-size: 1rem;
+    margin: 0;
+
+    @include tablet {
+      font-size: 1.5rem;
+    }
   }
 
   &__wrapper {
     background: url(../../assets/images/hero-bio.jpg);
     background-size: cover;
     height: 60vw;
+    min-height: 23rem;
     display: flex;
     align-items: center;
     overflow: hidden;
     background-color: rgba(50, 50, 50, 0.5);
     background-blend-mode: darken;
+
+    &-left {
+      @include tablet {
+      }
+    }
+
+    &--shows {
+      background: url(../../assets/images/hero-shows.jpg);
+      background-size: cover;
+      justify-content: center;
+      align-items: baseline;
+      flex-direction: column;
+      background-color: rgba(50, 50, 50, 0.5);
+      background-blend-mode: darken;
+
+      @include tablet {
+        flex-direction: row;
+        align-items: center;
+      }
+    }
   }
 
   &__container {
@@ -31,14 +75,15 @@
       max-width: 1220px;
       margin: 0 auto;
     }
-  }
-
-  &__title {
-    font-size: 1.8rem;
-
-    @include tablet {
-      font-size: 3.75rem;
-      line-height: 4.25rem;
+    &--shows {
+      @include tablet {
+        display: flex;
+      }
     }
   }
+}
+
+.embed {
+  width: 100%;
+  align-self: center;
 }
