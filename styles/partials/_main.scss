@@ -109,3 +109,41 @@
     }
   }
 }
+
+.form {
+  &__label {
+    color: $silver;
+    font-weight: 450;
+  }
+}
+
+.comments {
+  &__container {
+    margin: 0 1rem;
+    border-top: 1px solid $mercury;
+    display: flex;
+  }
+
+  &__wrapper {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__text {
+    color: $primary-black;
+    font-weight: bold;
+  }
+
+  &__item {
+    color: $silver;
+  }
+
+  &__image {
+    margin-top: 1rem;
+
+    width: 100%;
+    background: $mercury;
+    height: 50px;
+    border-radius: 50%;
+  }
+}
