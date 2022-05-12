@@ -16,21 +16,12 @@ let comments = [
   },
 ];
 
-let contentEl = document.querySelector(".comments");
-
-// for (let i = 0; i < comments.length; i++) {
-
-//   displayComemnt(comments[i])
-
-// create a div
-
-//append these p tags to the div
-
-for (let i = 0; i < comments.length; i++) {
-  let itemDiv = document.createElement("div");
+let displayComments = (comment) => {
+  let itemDiv = document.createElement("article");
   itemDiv.classList.add("comments__container");
   contentEl.appendChild(itemDiv);
-  let image = document.createElement("img");
+
+  let image = document.createElement("div");
   image.classList.add("comments__image");
   itemDiv.appendChild(image);
 
@@ -43,28 +34,21 @@ for (let i = 0; i < comments.length; i++) {
 
   let itemComment1 = document.createElement("p");
   itemComment1.classList.add("comments__text");
-  itemComment1.innerText = comments[i].name;
+  itemComment1.innerText = comment.name;
   itemInnerDiv.appendChild(itemComment1);
 
   let itemComment2 = document.createElement("p");
   itemComment2.classList.add("comments__item");
-  itemComment2.innerText = comments[i].time;
+  itemComment2.innerText = comment.time;
   itemInnerDiv.appendChild(itemComment2);
 
   let itemComment3 = document.createElement("p");
-  itemComment3.innerText = comments[i].text;
+  itemComment3.innerText = comment.text;
   itemOuterDiv.appendChild(itemComment3);
+};
 
-  //return the div
-  // reutrn
+let contentEl = document.querySelector(".comments");
+
+for (let i = 0; i < comments.length; i++) {
+  displayComments(comments[i]);
 }
-
-// Runs three times, in the loop, to build each of the comment blocks
-// let displayComment = (comment) => {
-// builds the dynamic HTML
-// };
-
-// Runs once, on page load (must invoke it after) - NOTE: Could avoid using this, and just loop outside the function
-// let renderComments = (comment) => {
-// loops over the comments array, and calls displayComment() on each
-// };
