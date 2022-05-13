@@ -337,6 +337,10 @@ a {
   }
 }
 
+.form {
+  display: flex;
+  flex-direction: column;
+}
 .form__label {
   color: #afafaf;
   font-weight: 450;
@@ -361,8 +365,8 @@ a {
 .comments__image {
   margin-top: 1rem;
   margin-right: 2rem;
-  width: 6rem;
-  max-width: 6rem;
+  min-width: 3rem;
+  max-width: 3rem;
   background: #e1e1e1;
   height: 50px;
   border-radius: 50%;

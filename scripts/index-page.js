@@ -52,3 +52,19 @@ let contentEl = document.querySelector(".comments");
 for (let i = 0; i < comments.length; i++) {
   displayComments(comments[i]);
 }
+
+let submitForm = (event) => {
+  event.preventDefault();
+
+  let submitData = {
+    name: event.target.addName.value,
+    date: event.target.addComment.value,
+  };
+
+  comments.push(submitData);
+
+  displayComments();
+};
+
+let form = document.getElementById("form");
+form.addEventListener("submit", submitForm);

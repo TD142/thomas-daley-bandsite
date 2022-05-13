@@ -138,16 +138,18 @@
       </figure>
       <section>
         <div class="article__wrapper">
-        <h1 class="article__header">Join the Conversation</h1>
-        <form action="">
-          <label class="form__label" for="name">NAME</label> <br>
-          <input type="text" name="" id="name" />
-        </form class="form">
-        <label class= "form__label" for="comment">COMMENT</label> <br>
-          <input type="text" name="" id="comment" />
-        </form>
-        <button type="submit">submit</button>
-      </div>
+          <h1 class="article__header">Join the Conversation</h1>
+          <form id="form" class="form">
+            <label class="form__label" for="addName">NAME</label>
+            <input type="text" name="" id="addName" />
+
+            <label class="form__label" for="addComment">COMMENT</label>
+            <textarea name="" id="addComment" cols="30" rows="10"></textarea>
+
+            <label for="submit"></label>
+            <button id="submit" type="submit">COMMENT</button>
+          </form>
+        </div>
         <div class="comments"></div>
       </section>
     </main>

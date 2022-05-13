@@ -1,0 +1,71 @@
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+}
+
+body,
+h1,
+h2 {
+  margin: 0;
+  font-family: sans-serif;
+}
+
+.header {
+  text-align: center;
+  background-color: rgb(206, 228, 247);
+  padding: 1rem 0;
+}
+
+.main {
+  display: flex;
+
+  &__left,
+  &__right {
+    flex-basis: 50%;
+    padding: 1rem;
+    margin: 0.5rem;
+    border: 1px solid black;
+    border-radius: 10px;
+    height: 90vh;
+  }
+
+  &__left {
+    background-color: aquamarine;
+  }
+
+  &__right {
+    background-color: beige;
+  }
+}
+
+.booking-form {
+  margin-top: 1rem;
+  display: flex;
+  flex-direction: column;
+
+  &__group {
+    margin-bottom: 1rem;
+  }
+
+  &__input {
+    background-color: rgb(245, 245, 245);
+    padding: 1rem 0.75rem;
+    width: 100%;
+    border-radius: 10px;
+    border: 2px solid rgb(215, 215, 215);
+
+    &::placeholder {
+      color: black;
+    }
+
+    &[type="date" i] {
+      font: inherit;
+    }
+  }
+
+  &__button {
+    padding: 0.5rem;
+    max-width: 150px;
+  }
+}
