@@ -1,32 +1,33 @@
 const shows = [
   {
-    DATE: "Mon Sept 06 2021",
-    VENUE: "Ronald Lane",
-    LOCATION: "San Francisco CA CA",
+    date: "Mon Sept 06 2021",
+    venue: "Ronald Lane",
+    location: "San Francisco CA CA",
   },
   {
-    DATE: "Tue Sept 21 2021",
-    VENUE: "Pier 3 East",
-    LOCATION: "San Francisco CA",
+    date: "Tue Sept 21 2021",
+    venue: "Pier 3 East",
+    location: "San Francisco CA",
   },
   {
-    DATE: "Fri Oct 15 2021",
-    VENUE: "View Lounge",
-    LOCATION: "San Francisco CA",
+    date: "Fri Oct 15 2021",
+    venue: "View Lounge",
+    location: "San Francisco CA",
   },
   {
-    DATE: "Sat Nov 06 2021",
-    VENUE: "Hyatt Agency",
-    LOCATION: "San Francisco CA",
+    date: "Sat Nov 06 2021",
+    venue: "Hyatt Agency",
+    location: "San Francisco CA",
   },
   {
-    DATE: "Fri Nov 26 2021",
-    VENUE: "Moscow Center",
-    LOCATION: "San Francisco CA",
-
-    DATE: "Wed Dec 15 2021",
-    VENUE: "Press Club",
-    LOCATION: "San Francisco CA",
+    date: "Fri Nov 26 2021",
+    venue: "Moscow Center",
+    location: "San Francisco CA",
+  },
+  {
+    date: "Wed Dec 15 2021",
+    venue: "Press Club",
+    location: "San Francisco CA",
   },
 ];
 
@@ -35,31 +36,32 @@ const shows = [
 const displayDates = (show) => {
   const mainArticle = document.createElement("article");
   mainEl.appendChild(mainArticle);
+
   const header1 = document.createElement("p");
   mainArticle.appendChild(header1);
-  header1.innerText = "DATE";
+  header1.innerText = "date".toUpperCase();
   header1.classList.add("shows__subtitle");
 
   const date = document.createElement("p");
-  date.innerText = show.DATE;
+  date.innerText = show.date;
   mainArticle.appendChild(date);
 
   const header2 = document.createElement("p");
   mainArticle.appendChild(header2);
-  header2.innerText = "VENUE";
+  header2.innerText = "venue".toUpperCase();
   header2.classList.add("shows__subtitle");
 
   const venue = document.createElement("p");
-  venue.innerText = show.VENUE;
+  venue.innerText = show.venue;
   mainArticle.appendChild(venue);
 
   const header3 = document.createElement("p");
   mainArticle.appendChild(header3);
-  header3.innerText = "LOCATION";
+  header3.innerText = "location".toUpperCase();
   header3.classList.add("shows__subtitle");
 
   const location = document.createElement("p");
-  location.innerText = show.LOCATION;
+  location.innerText = show.location;
   mainArticle.appendChild(location);
 
   const submit = document.createElement("button");
@@ -67,10 +69,10 @@ const displayDates = (show) => {
   mainArticle.appendChild(submit);
 
   // const date = document.createElement("p");
-  // date.innerText = show.DATE;
+  // date.innerText = show.date;
   // mainArticle.appendChild(date);
 
-  // mainArticle.innerText = show.DATE;
+  // mainArticle.innerText = show.date;
 };
 
 //   let displayComments = (comment) => {
@@ -115,3 +117,5 @@ const mainEl = document.querySelector(".shows");
 for (let i = 0; i < shows.length; i++) {
   displayDates(shows[i]);
 }
+
+// how to put time and date in submit, event handler not working, how to access single key in loop.

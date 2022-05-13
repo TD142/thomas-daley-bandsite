@@ -1,3 +1,4 @@
+// TODO: use const
 let comments = [
   {
     name: "Connor Walton",
@@ -12,7 +13,7 @@ let comments = [
   {
     name: "Miles Acosta",
     time: "01/09/2021",
-    text: " I can't stop listening. Every time I hear one of their songs - the vocals - it gives me goosebumps. Shivers straight down my spine. What a beautiful expression of creativity. Can't get enough.",
+    text: "I can't stop listening. Every time I hear one of their songs - the vocals - it gives me goosebumps. Shivers straight down my spine. What a beautiful expression of creativity. Can't get enough.",
   },
 ];
 
@@ -47,24 +48,39 @@ let displayComments = (comment) => {
   itemOuterDiv.appendChild(itemComment3);
 };
 
-let contentEl = document.querySelector(".comments");
+let contentEl = document.querySelector(".comments"); // TODO: use id
 
-for (let i = 0; i < comments.length; i++) {
-  displayComments(comments[i]);
-}
+/**
+ * ...
+ */
+const renderComments = () => {
+  for (let i = 0; i < comments.length; i++) {
+    displayComments(comments[i]);
+  }
+};
 
+// ...
 let submitForm = (event) => {
   event.preventDefault();
 
+  contentEl.innerText = "";
+
+  const dateToday = new Date().toLocaleString().split(",")[0];
+
   let submitData = {
     name: event.target.addName.value,
-    date: event.target.addComment.value,
+    text: event.target.addComment.value,
+    time: dateToday,
   };
 
-  comments.push(submitData);
+  comments.unshift(submitData);
 
-  displayComments();
+  renderComments();
 };
+
+console.log(comments);
+
+renderComments();
 
 let form = document.getElementById("form");
 form.addEventListener("submit", submitForm);
