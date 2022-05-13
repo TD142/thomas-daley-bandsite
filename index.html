@@ -139,16 +139,36 @@
       <section>
         <div class="article__wrapper">
           <h1 class="article__header">Join the Conversation</h1>
-          <form id="form" class="form">
-            <label class="form__label" for="addName">NAME</label>
-            <input type="text" name="" id="addName" />
+          <div class="article__inner-wrapper">
+            <form id="form" class="form">
+              <div class="form__image"></div>
+              <div class="form__container">
+                <label class="form__label" for="addName">NAME</label>
+                <input
+                  class="form__input"
+                  type="text"
+                  name="name"
+                  id="addName"
+                  placeholder="Enter your name"
+                />
 
-            <label class="form__label" for="addComment">COMMENT</label>
-            <textarea name="" id="addComment" cols="30" rows="10"></textarea>
+                <label class="form__label" for="addComment">COMMENT</label>
+                <textarea
+                  class="form__input form__input--resize"
+                  name="text"
+                  id="addComment"
+                  cols="30"
+                  rows="10"
+                  placeholder="Add a new comment"
+                ></textarea>
 
-            <label for="submit"></label>
-            <button id="submit" type="submit">COMMENT</button>
-          </form>
+                <label for="submit"></label>
+                <button class="form__button" id="submit" type="submit">
+                  COMMENT
+                </button>
+              </div>
+            </form>
+          </div>
         </div>
         <div class="comments"></div>
       </section>

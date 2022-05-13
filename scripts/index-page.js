@@ -27,12 +27,14 @@ let displayComments = (comment) => {
   itemDiv.appendChild(image);
 
   let itemOuterDiv = document.createElement("div");
+  itemOuterDiv.classList.add("comments__outer-wrapper");
   itemDiv.appendChild(itemOuterDiv);
 
   let itemInnerDiv = document.createElement("div");
   itemInnerDiv.classList.add("comments__wrapper");
   itemOuterDiv.appendChild(itemInnerDiv);
 
+  // TODO: Change these three cariable names + classes to better reflect what they are
   let itemComment1 = document.createElement("p");
   itemComment1.classList.add("comments__text");
   itemComment1.innerText = comment.name;
@@ -84,3 +86,8 @@ renderComments();
 
 let form = document.getElementById("form");
 form.addEventListener("submit", submitForm);
+
+const click = document.querySelector(".form__input");
+click.addEventListener("click", (e) => {
+  e.target.style.color = "green";
+});
