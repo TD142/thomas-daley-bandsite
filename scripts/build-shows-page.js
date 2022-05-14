@@ -2,7 +2,7 @@ const shows = [
   {
     date: "Mon Sept 06 2021",
     venue: "Ronald Lane",
-    location: "San Francisco CA CA",
+    location: "San Francisco CA",
   },
   {
     date: "Tue Sept 21 2021",
@@ -37,7 +37,7 @@ const sectionWrapper = document.createElement("div");
 sectionWrapper.classList.add("shows__wrapper");
 mainEl.appendChild(sectionWrapper);
 const sectionHeader = document.createElement("h2");
-sectionHeader.innerText = "shows";
+sectionHeader.innerText = "Shows";
 sectionHeader.classList.add("shows__header");
 sectionWrapper.appendChild(sectionHeader);
 
@@ -51,60 +51,73 @@ showsContainer.appendChild(innerWrapper);
 
 const sectionHeader1 = document.createElement("p");
 sectionHeader1.innerText = "date".toUpperCase();
+sectionHeader1.classList.add("shows__secondary-subtitle");
+
 innerWrapper.appendChild(sectionHeader1);
 
 const sectionHeader2 = document.createElement("p");
 sectionHeader2.innerText = "venue".toUpperCase();
+sectionHeader2.classList.add("shows__secondary-subtitle");
+
 innerWrapper.appendChild(sectionHeader2);
 
 sectionHeader3 = document.createElement("p");
 sectionHeader3.innerText = "location".toUpperCase();
+sectionHeader3.classList.add("shows__secondary-subtitle");
+sectionHeader3.classList.add("shows__secondary-subtitle--margin");
+
 innerWrapper.appendChild(sectionHeader3);
 
-// const sectionHeader2 = document.createElement("p");
-// const sectionHeader3 = document.createElement("p");
-
 const displayDates = (show) => {
-  const mainArticle = document.createElement("article");
-  mainArticle.classList.add("shows__container");
-  showsContainer.appendChild(mainArticle);
+  const outerContainer = document.createElement("div");
+  outerContainer.classList.add("shows__outer-container");
+  showsContainer.appendChild(outerContainer);
+
+  const innerContainer = document.createElement("article");
+  innerContainer.classList.add("shows__inner-container");
+  outerContainer.appendChild(innerContainer);
 
   const header1 = document.createElement("p");
-  mainArticle.appendChild(header1);
+  innerContainer.appendChild(header1);
   header1.innerText = "date".toUpperCase();
   header1.classList.add("shows__subtitle");
 
   const date = document.createElement("p");
+  date.classList.add("shows__inner-subtitle");
   date.innerText = show.date;
-  mainArticle.appendChild(date);
+  innerContainer.appendChild(date);
 
   const header2 = document.createElement("p");
-  mainArticle.appendChild(header2);
+  innerContainer.appendChild(header2);
   header2.innerText = "venue".toUpperCase();
   header2.classList.add("shows__subtitle");
 
   const venue = document.createElement("p");
   venue.innerText = show.venue;
-  mainArticle.appendChild(venue);
+  venue.classList.add("shows__text");
+  innerContainer.appendChild(venue);
 
   const header3 = document.createElement("p");
-  mainArticle.appendChild(header3);
+  innerContainer.appendChild(header3);
   header3.innerText = "location".toUpperCase();
   header3.classList.add("shows__subtitle");
 
   const location = document.createElement("p");
   location.innerText = show.location;
-  mainArticle.appendChild(location);
+  location.classList.add("shows__text");
+  location.classList.add("shows__text--margin");
+  innerContainer.appendChild(location);
 
   const submit = document.createElement("button");
   submit.innerText = "BUY TICKETS";
-  mainArticle.appendChild(submit);
+  submit.classList.add("shows__button");
+  innerContainer.appendChild(submit);
 
   // const date = document.createElement("p");
   // date.innerText = show.date;
-  // mainArticle.appendChild(date);
+  // innerContainer.appendChild(date);
 
-  // mainArticle.innerText = show.date;
+  // innerContainer.innerText = show.date;
 };
 
 //   let displayComments = (comment) => {

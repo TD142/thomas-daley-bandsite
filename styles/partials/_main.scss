@@ -196,8 +196,114 @@
   }
 }
 
-.section {
-  color: black;
+.shows {
+  @include desktop {
+    display: flex;
+    max-width: 1280px;
+    margin: 0 auto;
+  }
+
+  &__header {
+    margin: 2rem 1rem;
+    @include tablet {
+      font-size: 2.5rem;
+      margin: 4rem 2rem;
+    }
+  }
+
+  &__secondary-wrapper {
+    @include tablet {
+      display: flex;
+      margin: 0 2rem;
+    }
+  }
+
+  &__container {
+    padding-bottom: 3rem;
+  }
+
+  &__outer-container {
+    border-bottom: 1px solid $mercury;
+    @include tablet {
+      margin: 0 1rem;
+    }
+  }
+
+  &__inner-container {
+    padding: 0;
+    margin: 0 1rem;
+
+    @include tablet {
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+    }
+  }
+
+  &__inner-subtitle {
+    font-weight: bold;
+    margin: 0 0rem 1rem 0;
+    width: 7rem;
+    white-space: nowrap;
+
+    @include tablet {
+      margin: 0 5rem 1rem 0;
+    }
+  }
+
+  &__subtitle {
+    color: $silver;
+    font-weight: 450;
+    margin: 0 0 0.5rem 0;
+    font-size: 0.7rem;
+
+    @include tablet {
+      display: none;
+    }
+  }
+  &__secondary-subtitle {
+    color: $silver;
+    font-weight: 450;
+    display: none;
+    font-size: 0.875rem;
+    margin-right: 5.6rem;
+
+    @include tablet {
+      display: flex;
+      font-size: 0.8.75rem;
+      width: 25%;
+    }
+    &--margin {
+      margin-right: 13rem;
+      position: relative;
+      right: 1.8rem;
+    }
+  }
+
+  &__text {
+    margin: 0 0 0.5rem 0;
+    width: 7rem;
+    white-space: nowrap;
+
+    @include tablet {
+      margin: 0 3rem 0.5rem 0;
+    }
+
+    &--margin {
+      @include tablet {
+        margin: 0 2rem 0rem 0;
+      }
+    }
+  }
+
+  &__button {
+    @include button;
+    margin-top: 0.8rem;
+    width: 100%;
+    @include tablet {
+      width: 12rem;
+    }
+  }
 }
 
 .comments {

@@ -24,3 +24,13 @@
     @content;
   }
 }
+
+@mixin button {
+  background-color: $primary-black;
+  color: $white;
+  font-size: 16px;
+  border: 1px solid $primary-black;
+  height: 40px;
+  border-radius: 4px;
+  margin-bottom: 1rem;
+}
