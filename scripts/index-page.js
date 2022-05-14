@@ -46,6 +46,7 @@ let displayComments = (comment) => {
   itemInnerDiv.appendChild(itemComment2);
 
   let itemComment3 = document.createElement("p");
+  itemComment3.classList.add("comments__secondary-text");
   itemComment3.innerText = comment.text;
   itemOuterDiv.appendChild(itemComment3);
 };

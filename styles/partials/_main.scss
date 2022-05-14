@@ -131,16 +131,21 @@
   }
 
   &__image {
-    margin: 1.1rem 1rem 0 0;
-    height: 50px;
-    min-width: 3rem;
-    max-width: 3rem;
+    margin: 1.5rem 1rem 0 0;
+    height: 38px;
+    min-width: 2.25rem;
+    max-width: 2.25rem;
     border-radius: 50%;
     background: url(../../assets/images/Mohan-muruge.jpg);
     background-size: cover;
+    background-position: -4px;
 
     @include tablet {
-      margin: 1.3rem 1rem 0 0;
+      margin: 1.6rem 1rem 0 0;
+      min-width: 3rem;
+      max-width: 3rem;
+      height: 50px;
+      background-position: -4px;
     }
   }
 
@@ -159,6 +164,10 @@
     resize: none;
     font-size: 0.85rem;
     font-family: avenir;
+
+    @include tablet {
+      height: 3rem;
+    }
 
     &--resize {
       @include tablet {
@@ -209,6 +218,9 @@
       font-size: 2.5rem;
       margin: 4rem 2rem;
     }
+    @include desktop {
+      margin: 2.4rem 6rem 1rem 2rem;
+    }
   }
 
   &__secondary-wrapper {
@@ -219,11 +231,20 @@
   }
 
   &__container {
-    padding-bottom: 3rem;
+    padding-bottom: 1rem;
+
+    @include tablet {
+      padding-bottom: 3rem;
+    }
+
+    @include desktop {
+      margin-top: 3rem;
+    }
   }
 
   &__outer-container {
     border-bottom: 1px solid $mercury;
+    margin-top: 1rem;
     @include tablet {
       margin: 0 1rem;
     }
@@ -312,6 +333,7 @@
     margin: 0 2.25rem;
     margin-bottom: 2rem;
   }
+
   @include desktop {
     max-width: 1220px;
     width: 39.6rem;
@@ -335,6 +357,11 @@
   &__text {
     color: $primary-black;
     font-weight: bold;
+    margin-bottom: 0;
+  }
+
+  &__secondary-text {
+    margin-top: 0;
   }
 
   &__item {
@@ -344,10 +371,16 @@
   &__image {
     margin: 1rem 1rem 0 0;
 
-    min-width: 3rem;
-    max-width: 3rem;
+    min-width: 2.25rem;
+    max-width: 2.25rem;
     background: $mercury;
-    height: 50px;
+    height: 38px;
     border-radius: 50%;
+
+    @include tablet {
+      min-width: 3rem;
+      max-width: 3rem;
+      height: 50px;
+    }
   }
 }

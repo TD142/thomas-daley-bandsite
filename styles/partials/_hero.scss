@@ -10,9 +10,14 @@
 
     &--shows {
       width: 18rem;
-      padding-top: 1rem;
+      padding: 2rem 0 2rem 0;
 
       @include tablet {
+        padding-bottom: 4rem;
+        width: 32rem;
+      }
+
+      @include desktop {
         width: 30rem;
       }
     }
@@ -36,12 +41,22 @@
     background: url(../../assets/images/hero-bio.jpg);
     background-size: cover;
     height: 60vw;
-    min-height: 23rem;
+
     display: flex;
     align-items: center;
     overflow: hidden;
     background-color: rgba(50, 50, 50, 0.5);
     background-blend-mode: darken;
+
+    &-left {
+      @include desktop {
+        margin-right: 8rem;
+      }
+    }
+
+    @include tablet {
+      max-height: 800px;
+    }
 
     &-left {
       @include tablet {
@@ -56,6 +71,11 @@
       flex-direction: column;
       background-color: rgba(50, 50, 50, 0.5);
       background-blend-mode: darken;
+      min-height: 400px;
+
+      @include tablet {
+        max-height: 800px;
+      }
 
       @include desktop {
         flex-direction: row;
@@ -86,4 +106,8 @@
 .embed {
   width: 100%;
   align-self: center;
+
+  @include tablet {
+    width: 27rem;
+  }
 }
