@@ -164,3 +164,24 @@ for (let i = 0; i < shows.length; i++) {
 }
 
 // how to put time and date in submit, event handler not working, how to access single key in loop.
+
+const showsSelected = document.querySelectorAll(".shows__button");
+showsSelected.forEach((item) => {
+  item.addEventListener("click", (e) => {
+    const containerClick = document.querySelectorAll(".shows__outer-container");
+    containerClick.forEach((item) => {
+      item.style.background = "black";
+    });
+  });
+});
+
+//     alert("hello");
+//   }
+
+//   alert("hello");
+// });
+
+// const click = document.querySelector(".form__input");
+// click.addEventListener("click", () => {
+//   click.style.outlinecolor = "black";
+// });

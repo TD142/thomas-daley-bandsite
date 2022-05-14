@@ -501,6 +501,9 @@ a {
   border-bottom: 1px solid #e1e1e1;
   margin-top: 1rem;
 }
+.shows__outer-container:hover {
+  background: #e1e1e1;
+}
 @media (min-width: 768px) {
   .shows__outer-container {
     margin: 0 1rem;
@@ -604,32 +607,32 @@ a {
   .comments {
     max-width: 1220px;
     width: 39.6rem;
-    margin: 0 auto;
+    margin: 2rem auto;
   }
 }
 .comments__container {
   display: flex;
   border-bottom: 1px solid #e1e1e1;
 }
-.comments__outer-wrapper {
+.comments__container__outer-wrapper {
   width: 100%;
 }
-.comments__wrapper {
+.comments__container__wrapper {
   display: flex;
   justify-content: space-between;
 }
-.comments__text {
+.comments__container__text {
   color: #323232;
   font-weight: bold;
   margin-bottom: 0;
 }
-.comments__secondary-text {
+.comments__container__secondary-text {
   margin-top: 0;
 }
-.comments__item {
+.comments__container__item {
   color: #afafaf;
 }
-.comments__image {
+.comments__container__image {
   margin: 1rem 1rem 0 0;
   min-width: 2.25rem;
   max-width: 2.25rem;
@@ -638,7 +641,7 @@ a {
   border-radius: 50%;
 }
 @media (min-width: 768px) {
-  .comments__image {
+  .comments__container__image {
     min-width: 3rem;
     max-width: 3rem;
     height: 50px;
