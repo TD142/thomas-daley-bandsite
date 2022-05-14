@@ -421,6 +421,10 @@ a {
   }
 }
 
+.section {
+  color: black;
+}
+
 .comments {
   margin: 0 1rem;
   margin-bottom: 1rem;

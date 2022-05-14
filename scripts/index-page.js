@@ -87,7 +87,7 @@ renderComments();
 let form = document.getElementById("form");
 form.addEventListener("submit", submitForm);
 
-const click = document.querySelector(".form__input");
-click.addEventListener("click", (e) => {
-  e.target.style.color = "green";
-});
+// const click = document.querySelector(".form__input");
+// click.addEventListener("click", (e) => {
+//   e.target.click.
+// });

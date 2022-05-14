@@ -31,11 +31,43 @@ const shows = [
   },
 ];
 
-// console.log(Object.keys(shows[0]()));
+const mainEl = document.querySelector(".shows");
+
+const sectionWrapper = document.createElement("div");
+sectionWrapper.classList.add("shows__wrapper");
+mainEl.appendChild(sectionWrapper);
+const sectionHeader = document.createElement("h2");
+sectionHeader.innerText = "shows";
+sectionHeader.classList.add("shows__header");
+sectionWrapper.appendChild(sectionHeader);
+
+const showsContainer = document.createElement("div");
+showsContainer.classList.add("shows__container");
+mainEl.appendChild(showsContainer);
+
+const innerWrapper = document.createElement("div");
+innerWrapper.classList.add("shows__secondary-wrapper");
+showsContainer.appendChild(innerWrapper);
+
+const sectionHeader1 = document.createElement("p");
+sectionHeader1.innerText = "date".toUpperCase();
+innerWrapper.appendChild(sectionHeader1);
+
+const sectionHeader2 = document.createElement("p");
+sectionHeader2.innerText = "venue".toUpperCase();
+innerWrapper.appendChild(sectionHeader2);
+
+sectionHeader3 = document.createElement("p");
+sectionHeader3.innerText = "location".toUpperCase();
+innerWrapper.appendChild(sectionHeader3);
+
+// const sectionHeader2 = document.createElement("p");
+// const sectionHeader3 = document.createElement("p");
 
 const displayDates = (show) => {
   const mainArticle = document.createElement("article");
-  mainEl.appendChild(mainArticle);
+  mainArticle.classList.add("shows__container");
+  showsContainer.appendChild(mainArticle);
 
   const header1 = document.createElement("p");
   mainArticle.appendChild(header1);
@@ -112,7 +144,7 @@ const displayDates = (show) => {
 //     displayComments(comments[i]);
 //   }
 
-const mainEl = document.querySelector(".shows");
+// const mainEl = document.querySelector(".shows");
 
 for (let i = 0; i < shows.length; i++) {
   displayDates(shows[i]);
