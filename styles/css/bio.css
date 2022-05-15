@@ -130,12 +130,13 @@ a {
   color: #ffffff;
   width: 50%;
 }
-.nav .list__items:hover {
-  border-bottom: 3px solid #ffffff;
-  color: #ffffff;
-}
 .nav .list__items--grey {
   color: #e1e1e1;
+}
+.nav .list__items--grey:hover {
+  border-bottom: 3px solid #ffffff;
+  color: #ffffff;
+  padding-bottom: 0;
 }
 @media (min-width: 768px) {
   .nav .list__items {

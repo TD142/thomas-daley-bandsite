@@ -71,13 +71,14 @@
       color: $white;
       width: 50%;
 
-      &:hover {
-        border-bottom: 3px solid $white;
-        color: $white;
-      }
-
       &--grey {
         color: $mercury;
+
+        &:hover {
+          border-bottom: 3px solid $white;
+          color: $white;
+          padding-bottom: 0;
+        }
       }
 
       @include tablet {
