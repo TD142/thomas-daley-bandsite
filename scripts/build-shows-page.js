@@ -39,6 +39,7 @@ mainEl.appendChild(sectionWrapper);
 const sectionHeader = document.createElement("h2");
 sectionHeader.innerText = "Shows";
 sectionHeader.classList.add("shows__header");
+sectionHeader.setAttribute("id", "shows");
 sectionWrapper.appendChild(sectionHeader);
 
 const showsContainer = document.createElement("div");

@@ -72,6 +72,9 @@ const submitForm = (event) => {
 
   comments.unshift(submitData);
 
+  let clearName = (addName.value = "");
+  let clearComment = (addComment.value = "");
+
   renderComments();
 };
 
