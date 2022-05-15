@@ -1,5 +1,4 @@
-// TODO: use const
-let comments = [
+const comments = [
   {
     name: "Connor Walton",
     time: "02/17/2021",
@@ -17,40 +16,40 @@ let comments = [
   },
 ];
 
-let displayComments = (comment) => {
-  let itemDiv = document.createElement("article");
+const displayComments = (comment) => {
+  const itemDiv = document.createElement("article");
   itemDiv.classList.add("comments__container");
   contentEl.appendChild(itemDiv);
 
-  let image = document.createElement("div");
+  const image = document.createElement("div");
   image.classList.add("comments__image");
   itemDiv.appendChild(image);
 
-  let itemOuterDiv = document.createElement("div");
+  const itemOuterDiv = document.createElement("div");
   itemOuterDiv.classList.add("comments__outer-wrapper");
   itemDiv.appendChild(itemOuterDiv);
 
-  let itemInnerDiv = document.createElement("div");
+  const itemInnerDiv = document.createElement("div");
   itemInnerDiv.classList.add("comments__wrapper");
   itemOuterDiv.appendChild(itemInnerDiv);
 
-  let commentsText = document.createElement("p");
+  const commentsText = document.createElement("p");
   commentsText.classList.add("comments__text");
   commentsText.innerText = comment.name;
   itemInnerDiv.appendChild(commentsText);
 
-  let commentsItem = document.createElement("p");
+  const commentsItem = document.createElement("p");
   commentsItem.classList.add("comments__item");
   commentsItem.innerText = comment.time;
   itemInnerDiv.appendChild(commentsItem);
 
-  let commentsSecondText = document.createElement("p");
+  const commentsSecondText = document.createElement("p");
   commentsSecondText.classList.add("comments__secondary-text");
   commentsSecondText.innerText = comment.text;
   itemOuterDiv.appendChild(commentsSecondText);
 };
 
-let contentEl = document.querySelector(".comments"); // TODO: use id
+const contentEl = document.querySelector(".comments"); // TODO: use id
 
 const renderComments = () => {
   for (let i = 0; i < comments.length; i++) {
@@ -58,14 +57,14 @@ const renderComments = () => {
   }
 };
 
-let submitForm = (event) => {
+const submitForm = (event) => {
   event.preventDefault();
 
   contentEl.innerText = "";
 
   const dateToday = new Date().toLocaleString().split(",")[0];
 
-  let submitData = {
+  const submitData = {
     name: event.target.addName.value,
     text: event.target.addComment.value,
     time: dateToday,
@@ -80,7 +79,7 @@ console.log(comments);
 
 renderComments();
 
-let form = document.getElementById("form");
+const form = document.getElementById("form");
 form.addEventListener("submit", submitForm);
 
 const click = document.querySelector(".form__input");
