@@ -67,6 +67,7 @@
       background: url(../../assets/images/hero-shows.jpg);
       background-size: cover;
       justify-content: center;
+      background-position: 0ch;
       align-items: baseline;
       flex-direction: column;
       background-color: rgba(50, 50, 50, 0.5);
@@ -75,6 +76,7 @@
 
       @include tablet {
         max-height: 800px;
+        min-height: 600px;
       }
 
       @include desktop {
@@ -109,5 +111,9 @@
 
   @include tablet {
     width: 27rem;
+  }
+
+  @include desktop {
+    width: 100%;
   }
 }

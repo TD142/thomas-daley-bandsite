@@ -123,6 +123,7 @@
 
   @include tablet {
     padding-bottom: 1rem;
+    margin: 0 4rem;
   }
 
   @include desktop {
@@ -198,6 +199,11 @@
     border-radius: 4px;
     margin-bottom: 1rem;
     width: 100%;
+    cursor: pointer;
+
+    &:hover {
+      background: $secondary-black;
+    }
 
     &-label {
       @include tablet {
@@ -210,12 +216,6 @@
     }
   }
 }
-
-// .button__label {
-//   @include tablet {
-//     align-self: flex-end;
-//   }
-// }
 
 .shows {
   @include desktop {
@@ -251,6 +251,7 @@
 
     @include desktop {
       margin-top: 3rem;
+      width: 60%;
     }
   }
 
@@ -263,6 +264,14 @@
     }
     &:active {
       background: $mercury;
+    }
+
+    &--highlight {
+      background: $mercury;
+    }
+
+    &--unactive {
+      background: green;
     }
     @include tablet {
       margin: 0 1rem;
@@ -314,7 +323,7 @@
       width: 25%;
     }
     &--margin {
-      margin-right: 13rem;
+      margin-right: 10.4rem;
       position: relative;
       right: 1.8rem;
     }
@@ -340,16 +349,27 @@
     @include button;
     margin-top: 0.8rem;
     width: 100%;
+
+    &:hover {
+      background: $secondary-black;
+    }
+
     @include tablet {
-      width: 12rem;
+      width: 9.375rem;
     }
   }
 }
 
 .comments {
-  margin: 0 1rem;
+  margin: 0 1rem 1rem 1rem;
+
   @include tablet {
     margin: 0 2.25rem;
+    margin-bottom: 2rem;
+  }
+
+  @include tablet {
+    margin: 0 6.2rem;
     margin-bottom: 2rem;
   }
 

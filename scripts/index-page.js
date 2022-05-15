@@ -34,35 +34,30 @@ let displayComments = (comment) => {
   itemInnerDiv.classList.add("comments__wrapper");
   itemOuterDiv.appendChild(itemInnerDiv);
 
-  // TODO: Change these three cariable names + classes to better reflect what they are
-  let itemComment1 = document.createElement("p");
-  itemComment1.classList.add("comments__text");
-  itemComment1.innerText = comment.name;
-  itemInnerDiv.appendChild(itemComment1);
+  let commentsText = document.createElement("p");
+  commentsText.classList.add("comments__text");
+  commentsText.innerText = comment.name;
+  itemInnerDiv.appendChild(commentsText);
 
-  let itemComment2 = document.createElement("p");
-  itemComment2.classList.add("comments__item");
-  itemComment2.innerText = comment.time;
-  itemInnerDiv.appendChild(itemComment2);
+  let commentsItem = document.createElement("p");
+  commentsItem.classList.add("comments__item");
+  commentsItem.innerText = comment.time;
+  itemInnerDiv.appendChild(commentsItem);
 
-  let itemComment3 = document.createElement("p");
-  itemComment3.classList.add("comments__secondary-text");
-  itemComment3.innerText = comment.text;
-  itemOuterDiv.appendChild(itemComment3);
+  let commentsSecondText = document.createElement("p");
+  commentsSecondText.classList.add("comments__secondary-text");
+  commentsSecondText.innerText = comment.text;
+  itemOuterDiv.appendChild(commentsSecondText);
 };
 
 let contentEl = document.querySelector(".comments"); // TODO: use id
 
-/**
- * ...
- */
 const renderComments = () => {
   for (let i = 0; i < comments.length; i++) {
     displayComments(comments[i]);
   }
 };
 
-// ...
 let submitForm = (event) => {
   event.preventDefault();
 

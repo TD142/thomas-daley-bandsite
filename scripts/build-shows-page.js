@@ -112,73 +112,85 @@ const displayDates = (show) => {
   submit.innerText = "BUY TICKETS";
   submit.classList.add("shows__button");
   innerContainer.appendChild(submit);
-
-  // const date = document.createElement("p");
-  // date.innerText = show.date;
-  // innerContainer.appendChild(date);
-
-  // innerContainer.innerText = show.date;
 };
-
-//   let displayComments = (comment) => {
-//     let itemDiv = document.createElement("article");
-//     itemDiv.classList.add("comments__container");
-//     contentEl.appendChild(itemDiv);
-
-//     let image = document.createElement("div");
-//     image.classList.add("comments__image");
-//     itemDiv.appendChild(image);
-
-//     let itemOuterDiv = document.createElement("div");
-//     itemDiv.appendChild(itemOuterDiv);
-
-//     let itemInnerDiv = document.createElement("div");
-//     itemInnerDiv.classList.add("comments__wrapper");
-//     itemOuterDiv.appendChild(itemInnerDiv);
-
-//     let itemComment1 = document.createElement("p");
-//     itemComment1.classList.add("comments__text");
-//     itemComment1.innerText = comment.name;
-//     itemInnerDiv.appendChild(itemComment1);
-
-//     let itemComment2 = document.createElement("p");
-//     itemComment2.classList.add("comments__item");
-//     itemComment2.innerText = comment.time;
-//     itemInnerDiv.appendChild(itemComment2);
-
-//     let itemComment3 = document.createElement("p");
-//     itemComment3.innerText = comment.text;
-//     itemOuterDiv.appendChild(itemComment3);
-//   };
-
-//   let contentEl = document.querySelector(".comments");
-
-//   for (let i = 0; i < comments.length; i++) {
-//     displayComments(comments[i]);
-//   }
-
-// const mainEl = document.querySelector(".shows");
 
 for (let i = 0; i < shows.length; i++) {
   displayDates(shows[i]);
 }
 
-// how to put time and date in submit, event handler not working, how to access single key in loop.
+//**-- the plan for below was to change the background of everything that's not clicked. However i could not figure out how to get nth child or type to work on the button.
 
-const showsSelected = document.querySelectorAll(".shows__button");
-showsSelected.forEach((item) => {
-  item.addEventListener("click", (e) => {
-    const containerClick = document.querySelectorAll(".shows__outer-container");
-    containerClick.forEach((item) => {
-      item.style.background = "black";
-    });
-  });
-});
+// const showsSelected = document.querySelectorAll(".shows__button");
+// showsSelected.forEach((item) => {
+//   item.addEventListener("click", (e) => {
+//     const containerClick = document
+//       .querySelector(".shows__outer-container:nth-child(2)")
+//       .classList.add("shows__outer-container--highlight");
 
-//     alert("hello");
-//   }
+//     const containerClick1 = document
+//       .querySelector(".shows__outer-container:nth-child(1)")
+//       .classList.add("shows__outer-container--unactive");
 
-//   alert("hello");
+//     const containerClick2 = document
+//       .querySelector(".shows__outer-container:nth-child(4)")
+//       .classList.add("shows__outer-container--unactive");
+
+//     const containerClick3 = document
+//       .querySelector(".shows__outer-container:nth-child(5)")
+//       .classList.add("shows__outer-container--unactive");
+
+//     const containerClick4 = document
+//       .querySelector(".shows__outer-container:nth-child(6)")
+//       .classList.add("shows__outer-container--unactive");
+
+//     const containerClick6 = document
+//       .querySelector(".shows__outer-container:nth-child(7)")
+//       .classList.add("shows__outer-container--unactive");
+//   });
+// });
+
+// const showsSelectedSecond = document.querySelector(
+//   ".shows__button:nth-of-type(3)"
+// );
+// showsSelectedSecond.addEventListener("click", (e) => {
+//   const secondcontainerClick = document
+//     .querySelector(".shows__outer-container:nth-child(2)")
+//     .classList.add("shows__outer-container--highlight");
+
+//   const secondcontainerClick1 = document
+//     .querySelector(".shows__outer-container:nth-child(3)")
+//     .classList.add("shows__outer-container--unactive");
+
+//   const secondcontainerClick2 = document
+//     .querySelector(".shows__outer-container:nth-child(4)")
+//     .classList.add("shows__outer-container--unactive");
+
+//   const secondcontainerClick3 = document
+//     .querySelector(".shows__outer-container:nth-child(5)")
+//     .classList.add("shows__outer-container--unactive");
+
+//   const secondcontainerClick4 = document
+//     .querySelector(".shows__outer-container:nth-child(6)")
+//     .classList.add("shows__outer-container--unactive");
+
+//   const secondcontainerClick6 = document
+//     .querySelector(".shows__outer-container:nth-child(7)")
+//     .classList.add("shows__outer-container--unactive");
+// });
+
+// const click = document.querySelector(".form__input");
+// click.addEventListener("click", () => {
+//   click.style.outlinecolor = "black";
+// });
+
+// const showsSelected = document.querySelectorAll(".shows__button");
+// showsSelected.forEach((item) => {
+//   item.addEventListener("click", (e) => {
+//     const containerClick = document.querySelectorAll(".shows__outer-container");
+//     containerClick.forEach((item) => {
+//       item.style.background = "black";
+//     });
+//   });
 // });
 
 // const click = document.querySelector(".form__input");
