@@ -197,13 +197,25 @@
     height: 40px;
     border-radius: 4px;
     margin-bottom: 1rem;
+    width: 100%;
+
+    &-label {
+      @include tablet {
+        align-self: flex-end;
+      }
+    }
 
     @include tablet {
       width: 12rem;
-      align-self: flex-end;
     }
   }
 }
+
+// .button__label {
+//   @include tablet {
+//     align-self: flex-end;
+//   }
+// }
 
 .shows {
   @include desktop {
@@ -247,6 +259,9 @@
     margin-top: 1rem;
 
     &:hover {
+      background: $alabaster;
+    }
+    &:active {
       background: $mercury;
     }
     @include tablet {
