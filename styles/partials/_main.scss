@@ -356,50 +356,51 @@
   @include desktop {
     max-width: 1220px;
     width: 39.6rem;
-    margin: 2rem auto;
+    margin: 0rem auto;
+    margin-bottom: 2rem;
   }
-  margin-bottom: 1rem;
+
   &__container {
     display: flex;
     border-bottom: 1px solid $mercury;
+  }
 
-    &__outer-wrapper {
-      width: 100%;
-    }
+  &__outer-wrapper {
+    width: 100%;
+  }
 
-    &__wrapper {
-      display: flex;
-      justify-content: space-between;
-    }
+  &__wrapper {
+    display: flex;
+    justify-content: space-between;
+  }
 
-    &__text {
-      color: $primary-black;
-      font-weight: bold;
-      margin-bottom: 0;
-    }
+  &__text {
+    color: $primary-black;
+    font-weight: bold;
+    margin-bottom: 0;
+  }
 
-    &__secondary-text {
-      margin-top: 0;
-    }
+  &__secondary-text {
+    margin-top: 0;
+  }
 
-    &__item {
-      color: $silver;
-    }
+  &__item {
+    color: $silver;
+  }
 
-    &__image {
-      margin: 1rem 1rem 0 0;
+  &__image {
+    margin: 1rem 1rem 0 0;
 
-      min-width: 2.25rem;
-      max-width: 2.25rem;
-      background: $mercury;
-      height: 38px;
-      border-radius: 50%;
+    min-width: 2.25rem;
+    max-width: 2.25rem;
+    background: $mercury;
+    height: 38px;
+    border-radius: 50%;
 
-      @include tablet {
-        min-width: 3rem;
-        max-width: 3rem;
-        height: 50px;
-      }
+    @include tablet {
+      min-width: 3rem;
+      max-width: 3rem;
+      height: 50px;
     }
   }
 }
