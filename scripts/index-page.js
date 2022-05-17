@@ -1,3 +1,12 @@
+const API_URL = "https://project-1-api.herokuapp.com";
+const KEY = "?api_key=f85dd6f7-d241-445c-9f2d-ee865a871db5";
+
+axios.get(`${API_URL}/comments${KEY}`).then((response) => {
+  console.log(response);
+  const commentsApi = response.data;
+  console.log(commentsApi[0].name);
+});
+
 const comments = [
   {
     name: "Connor Walton",

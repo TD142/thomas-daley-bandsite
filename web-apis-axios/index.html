@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Web APIs and Axios</title>
+  </head>
+  <body>
+    <header>
+      <h1>Web APIs and Axios</h1>
+    </header>
+    <main>
+      <section>
+        <form id="jokeForm">
+          <input type="text" name="question" />
+          <input type="text" name="answer" />
+          <button type="submit">Create Joke</button>
+        </form>
+      </section>
+      <section>
+        <h2>Jokes List</h2>
+        <ul id="jokesList"></ul>
+      </section>
+    </main>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="json-parse-stringify.js"></script>
+    <script src="json-placholder.js"></script>
+    <script src="jokes.js"></script>
+  </body>
+</html>
