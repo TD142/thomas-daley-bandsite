@@ -1,11 +1,7 @@
 const API_URL = "https://project-1-api.herokuapp.com";
 const KEY = "?api_key=f85dd6f7-d241-445c-9f2d-ee865a871db5";
 
-axios.get(`${API_URL}/comments${KEY}`).then((response) => {
-  console.log(response);
-  const commentsApi = response.data;
-  console.log(commentsApi[0].name);
-});
+const dateToday = new Date().toLocaleString().split(",")[0];
 
 const comments = [
   {
@@ -25,53 +21,61 @@ const comments = [
   },
 ];
 
-const displayComments = (comment) => {
-  const itemDiv = document.createElement("article");
-  itemDiv.classList.add("comments__container");
-  contentEl.appendChild(itemDiv);
+const displayComments = () => {
+  axios.get(`${API_URL}/comments${KEY}`).then((response) => {
+    console.log(response);
+    const commentsApi = response.data;
+    console.log(commentsApi);
 
-  const image = document.createElement("div");
-  image.classList.add("comments__image");
-  itemDiv.appendChild(image);
+    commentsApi.forEach((comment) => {
+      const itemDiv = document.createElement("article");
+      itemDiv.classList.add("comments__container");
+      contentEl.appendChild(itemDiv);
 
-  const itemOuterDiv = document.createElement("div");
-  itemOuterDiv.classList.add("comments__outer-wrapper");
-  itemDiv.appendChild(itemOuterDiv);
+      const image = document.createElement("div");
+      image.classList.add("comments__image");
+      itemDiv.appendChild(image);
 
-  const itemInnerDiv = document.createElement("div");
-  itemInnerDiv.classList.add("comments__wrapper");
-  itemOuterDiv.appendChild(itemInnerDiv);
+      const itemOuterDiv = document.createElement("div");
+      itemOuterDiv.classList.add("comments__outer-wrapper");
+      itemDiv.appendChild(itemOuterDiv);
 
-  const commentsText = document.createElement("p");
-  commentsText.classList.add("comments__text");
-  commentsText.innerText = comment.name;
-  itemInnerDiv.appendChild(commentsText);
+      const itemInnerDiv = document.createElement("div");
+      itemInnerDiv.classList.add("comments__wrapper");
+      itemOuterDiv.appendChild(itemInnerDiv);
 
-  const commentsItem = document.createElement("p");
-  commentsItem.classList.add("comments__item");
-  commentsItem.innerText = comment.time;
-  itemInnerDiv.appendChild(commentsItem);
+      const commentsText = document.createElement("p");
+      commentsText.classList.add("comments__text");
+      commentsText.innerText = comment.name;
+      itemInnerDiv.appendChild(commentsText);
 
-  const commentsSecondText = document.createElement("p");
-  commentsSecondText.classList.add("comments__secondary-text");
-  commentsSecondText.innerText = comment.text;
-  itemOuterDiv.appendChild(commentsSecondText);
+      const commentsItem = document.createElement("p");
+      commentsItem.classList.add("comments__item");
+      commentsItem.innerText = comment.timestamp;
+      itemInnerDiv.appendChild(commentsItem);
+
+      const commentsSecondText = document.createElement("p");
+      commentsSecondText.classList.add("comments__secondary-text");
+      commentsSecondText.innerText = comment.comment;
+      itemOuterDiv.appendChild(commentsSecondText);
+    });
+  });
 };
+
+displayComments();
 
 const contentEl = document.querySelector(".comments"); // TODO: use id
 
-const renderComments = () => {
-  for (let i = 0; i < comments.length; i++) {
-    displayComments(comments[i]);
-  }
-};
+// const renderComments = () => {
+//   for (let i = 0; i < comments.length; i++) {
+//     displayComments(comments[i]);
+//   }
+// };
 
 const submitForm = (event) => {
   event.preventDefault();
 
   contentEl.innerText = "";
-
-  const dateToday = new Date().toLocaleString().split(",")[0];
 
   const submitData = {
     name: event.target.addName.value,
