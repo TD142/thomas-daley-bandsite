@@ -79,21 +79,33 @@ const submitForm = (event) => {
 
   const submitData = {
     name: event.target.addName.value,
-    text: event.target.addComment.value,
-    time: dateToday,
+    comment: event.target.addComment.value,
+    // timestamp: dateToday,
   };
 
-  comments.unshift(submitData);
+  const config = {
+    headers: {
+      "Content-Type": "application/json",
+    },
+  };
+
+  axios.post(`${API_URL}/comments${KEY}`, submitData).then((response) => {
+    console.log(response);
+
+    displayComments();
+  });
+  // const commentsApi = response.data;
+  // console.log(commentsApi);
+
+  // comments.unshift(submitData);
 
   const clearName = (addName.value = "");
   const clearComment = (addComment.value = "");
-
-  renderComments();
 };
 
 console.log(comments);
 
-renderComments();
+// renderComments();
 
 const form = document.getElementById("form");
 form.addEventListener("submit", submitForm);
