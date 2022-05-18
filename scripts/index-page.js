@@ -1,6 +1,10 @@
 const API_URL = "https://project-1-api.herokuapp.com";
 const KEY = "?api_key=f85dd6f7-d241-445c-9f2d-ee865a871db5";
 
+const FULL_URL = `${API_URL}/comments${KEY}`;
+
+console.log(FULL_URL);
+
 const dateToday = new Date().toLocaleString().split(",")[0];
 
 const comments = [
@@ -49,9 +53,14 @@ const displayComments = () => {
       commentsText.innerText = comment.name;
       itemInnerDiv.appendChild(commentsText);
 
+      const time = comment.timestamp;
+      const timeStamp = new Date(time).toLocaleString().split(",")[0];
+      console.log(timeStamp);
+
       const commentsItem = document.createElement("p");
       commentsItem.classList.add("comments__item");
-      commentsItem.innerText = comment.timestamp;
+      commentsItem.innerText = timeStamp;
+
       itemInnerDiv.appendChild(commentsItem);
 
       const commentsSecondText = document.createElement("p");
@@ -91,6 +100,8 @@ const submitForm = (event) => {
 
   axios.post(`${API_URL}/comments${KEY}`, submitData).then((response) => {
     console.log(response);
+
+    // response.unshift(submitData);
 
     displayComments();
   });

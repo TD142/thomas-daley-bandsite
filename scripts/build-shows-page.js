@@ -1,3 +1,6 @@
+const API_URL = "https://project-1-api.herokuapp.com";
+const KEY = "?api_key=f85dd6f7-d241-445c-9f2d-ee865a871db5";
+
 const shows = [
   {
     date: "Mon Sept 06 2021",
@@ -69,55 +72,65 @@ sectionHeader3.classList.add("shows__secondary-subtitle--margin");
 
 innerWrapper.appendChild(sectionHeader3);
 
-const displayDates = (show) => {
-  const outerContainer = document.createElement("div");
-  outerContainer.classList.add("shows__outer-container");
-  showsContainer.appendChild(outerContainer);
+const displayDates = () => {
+  axios.get(`${API_URL}/showdates${KEY}`).then((response) => {
+    console.log(response);
+    const datesApi = response.data;
+    console.log(datesApi);
 
-  const innerContainer = document.createElement("article");
-  innerContainer.classList.add("shows__inner-container");
-  outerContainer.appendChild(innerContainer);
+    datesApi.forEach((show) => {
+      const outerContainer = document.createElement("div");
+      outerContainer.classList.add("shows__outer-container");
+      showsContainer.appendChild(outerContainer);
 
-  const header1 = document.createElement("p");
-  innerContainer.appendChild(header1);
-  header1.innerText = "date".toUpperCase();
-  header1.classList.add("shows__subtitle");
+      const innerContainer = document.createElement("article");
+      innerContainer.classList.add("shows__inner-container");
+      outerContainer.appendChild(innerContainer);
 
-  const date = document.createElement("p");
-  date.classList.add("shows__inner-subtitle");
-  date.innerText = show.date;
-  innerContainer.appendChild(date);
+      const header1 = document.createElement("p");
+      innerContainer.appendChild(header1);
+      header1.innerText = "date".toUpperCase();
+      header1.classList.add("shows__subtitle");
 
-  const header2 = document.createElement("p");
-  innerContainer.appendChild(header2);
-  header2.innerText = "venue".toUpperCase();
-  header2.classList.add("shows__subtitle");
+      const date = document.createElement("p");
+      date.classList.add("shows__inner-subtitle");
+      date.innerText = show.date;
+      innerContainer.appendChild(date);
 
-  const venue = document.createElement("p");
-  venue.innerText = show.venue;
-  venue.classList.add("shows__text");
-  innerContainer.appendChild(venue);
+      const header2 = document.createElement("p");
+      innerContainer.appendChild(header2);
+      header2.innerText = "venue".toUpperCase();
+      header2.classList.add("shows__subtitle");
 
-  const header3 = document.createElement("p");
-  innerContainer.appendChild(header3);
-  header3.innerText = "location".toUpperCase();
-  header3.classList.add("shows__subtitle");
+      const venue = document.createElement("p");
+      venue.innerText = show.place;
+      venue.classList.add("shows__text");
+      innerContainer.appendChild(venue);
 
-  const location = document.createElement("p");
-  location.innerText = show.location;
-  location.classList.add("shows__text");
-  location.classList.add("shows__text--margin");
-  innerContainer.appendChild(location);
+      const header3 = document.createElement("p");
+      innerContainer.appendChild(header3);
+      header3.innerText = "location".toUpperCase();
+      header3.classList.add("shows__subtitle");
 
-  const submit = document.createElement("button");
-  submit.innerText = "BUY TICKETS";
-  submit.classList.add("shows__button");
-  innerContainer.appendChild(submit);
+      const location = document.createElement("p");
+      location.innerText = show.location;
+      location.classList.add("shows__text");
+      location.classList.add("shows__text--margin");
+      innerContainer.appendChild(location);
+
+      const submit = document.createElement("button");
+      submit.innerText = "BUY TICKETS";
+      submit.classList.add("shows__button");
+      innerContainer.appendChild(submit);
+    });
+  });
 };
 
-for (let i = 0; i < shows.length; i++) {
-  displayDates(shows[i]);
-}
+displayDates();
+
+// for (let i = 0; i < shows.length; i++) {
+//   displayDates(shows[i]);
+// }
 
 //**-- the plan for below was to change the background of everything that's not clicked. However i could not figure out how to get nth child or type to work on the button.
 
