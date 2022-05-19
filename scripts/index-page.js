@@ -105,7 +105,7 @@ const submitForm = (event) => {
       console.log(response);
 
       // TODO: this isn't needed
-      response.unshift(submitData);
+      // response.unshift(submitData);
 
       displayComments();
     });

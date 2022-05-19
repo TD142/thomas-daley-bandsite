@@ -81,6 +81,7 @@ const handleShowRowClick = () => {
 
   listElements.forEach((item) => {
     item.addEventListener("click", () => {
+      console.log(item);
       listElements.forEach((item) => {
         item.classList.remove("shows__outer-container--highlight");
       });
