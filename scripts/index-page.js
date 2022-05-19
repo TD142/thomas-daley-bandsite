@@ -31,7 +31,7 @@ const displayComments = () => {
     const commentsApi = response.data;
     console.log(commentsApi);
 
-    commentsApi.forEach((comment) => {
+    commentsApi.reverse().forEach((comment) => {
       const itemDiv = document.createElement("article");
       itemDiv.classList.add("comments__container");
       contentEl.appendChild(itemDiv);
@@ -55,7 +55,6 @@ const displayComments = () => {
 
       const time = comment.timestamp;
       const timeStamp = new Date(time).toLocaleString().split(",")[0];
-      console.log(timeStamp);
 
       const commentsItem = document.createElement("p");
       commentsItem.classList.add("comments__item");
@@ -82,6 +81,7 @@ const contentEl = document.querySelector(".comments"); // TODO: use id
 // };
 
 const submitForm = (event) => {
+  console.log(event);
   event.preventDefault();
 
   contentEl.innerText = "";
@@ -98,13 +98,17 @@ const submitForm = (event) => {
     },
   };
 
-  axios.post(`${API_URL}/comments${KEY}`, submitData).then((response) => {
-    console.log(response);
+  axios
+    .post(`${API_URL}/comments${KEY}`, submitData, config)
+    .then((response) => {
+      // this contains only the comment we just added, not the full comment list
+      console.log(response);
 
-    // response.unshift(submitData);
+      // TODO: this isn't needed
+      response.unshift(submitData);
 
-    displayComments();
-  });
+      displayComments();
+    });
   // const commentsApi = response.data;
   // console.log(commentsApi);
 

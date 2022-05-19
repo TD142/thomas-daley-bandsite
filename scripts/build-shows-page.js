@@ -72,6 +72,24 @@ sectionHeader3.classList.add("shows__secondary-subtitle--margin");
 
 innerWrapper.appendChild(sectionHeader3);
 
+/**
+ * On click of a shows row, remove highlight class from
+ * all rows and add highlight class to clicked row
+ */
+const handleShowRowClick = () => {
+  const listElements = document.querySelectorAll(".shows__outer-container");
+
+  listElements.forEach((item) => {
+    item.addEventListener("click", () => {
+      listElements.forEach((item) => {
+        item.classList.remove("shows__outer-container--highlight");
+      });
+
+      item.classList.add("shows__outer-container--highlight");
+    });
+  });
+};
+
 const displayDates = () => {
   axios.get(`${API_URL}/showdates${KEY}`).then((response) => {
     console.log(response);
@@ -92,9 +110,12 @@ const displayDates = () => {
       header1.innerText = "date".toUpperCase();
       header1.classList.add("shows__subtitle");
 
+      const dates = parseInt(show.date);
+      const showDates = new Date(dates).toLocaleString().split(",")[0];
+
       const date = document.createElement("p");
       date.classList.add("shows__inner-subtitle");
-      date.innerText = show.date;
+      date.innerText = showDates;
       innerContainer.appendChild(date);
 
       const header2 = document.createElement("p");
@@ -123,6 +144,8 @@ const displayDates = () => {
       submit.classList.add("shows__button");
       innerContainer.appendChild(submit);
     });
+
+    handleShowRowClick();
   });
 };
 
