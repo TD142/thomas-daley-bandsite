@@ -3,35 +3,13 @@ const KEY = "?api_key=f85dd6f7-d241-445c-9f2d-ee865a871db5";
 
 const FULL_URL = `${API_URL}/comments${KEY}`;
 
-console.log(FULL_URL);
-
-const dateToday = new Date().toLocaleString().split(",")[0];
-
-const comments = [
-  {
-    name: "Connor Walton",
-    time: "02/17/2021",
-    text: "This is art. This is inexplicable magic expressed in the purest way, everything that makes up this majestic work deserves reverence. Let us appreciate this for what it is and what it contains.",
-  },
-  {
-    name: "Emilie Beach",
-    time: "01/09/2021",
-    text: "I feel blessed to have seen them in person. What a show! They were just perfection. If there was one day of my life I could relive, this would be it. What an incredible day.",
-  },
-  {
-    name: "Miles Acosta",
-    time: "01/09/2021",
-    text: "I can't stop listening. Every time I hear one of their songs - the vocals - it gives me goosebumps. Shivers straight down my spine. What a beautiful expression of creativity. Can't get enough.",
-  },
-];
-
 const displayComments = () => {
   axios.get(`${API_URL}/comments${KEY}`).then((response) => {
     console.log(response);
-    const commentsApi = response.data;
-    console.log(commentsApi);
+    const commentsResponse = response.data;
+    console.log(commentsResponse);
 
-    commentsApi.reverse().forEach((comment) => {
+    commentsResponse.reverse().forEach((comment) => {
       const itemDiv = document.createElement("article");
       itemDiv.classList.add("comments__container");
       contentEl.appendChild(itemDiv);
@@ -74,22 +52,28 @@ displayComments();
 
 const contentEl = document.querySelector(".comments"); // TODO: use id
 
-// const renderComments = () => {
-//   for (let i = 0; i < comments.length; i++) {
-//     displayComments(comments[i]);
-//   }
-// };
-
 const submitForm = (event) => {
   console.log(event);
   event.preventDefault();
+
+  const formInput = document.querySelectorAll(".form__input");
+
+  if (event.target.addName.value == "" || event.target.addComment.value == "") {
+    formInput.forEach((item) => {
+      item.classList.add("form__input--outline");
+    });
+    return;
+  } else {
+    formInput.forEach((item) => {
+      item.classList.remove("form__input--outline");
+    });
+  }
 
   contentEl.innerText = "";
 
   const submitData = {
     name: event.target.addName.value,
     comment: event.target.addComment.value,
-    // timestamp: dateToday,
   };
 
   const config = {
@@ -101,31 +85,14 @@ const submitForm = (event) => {
   axios
     .post(`${API_URL}/comments${KEY}`, submitData, config)
     .then((response) => {
-      // this contains only the comment we just added, not the full comment list
       console.log(response);
-
-      // TODO: this isn't needed
-      // response.unshift(submitData);
 
       displayComments();
     });
-  // const commentsApi = response.data;
-  // console.log(commentsApi);
-
-  // comments.unshift(submitData);
 
   const clearName = (addName.value = "");
   const clearComment = (addComment.value = "");
 };
 
-console.log(comments);
-
-// renderComments();
-
 const form = document.getElementById("form");
 form.addEventListener("submit", submitForm);
-
-const click = document.querySelector(".form__input");
-click.addEventListener("click", () => {
-  click.style.outlinecolor = "black";
-});

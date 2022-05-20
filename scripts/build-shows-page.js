@@ -1,237 +1,120 @@
 const API_URL = "https://project-1-api.herokuapp.com";
 const KEY = "?api_key=f85dd6f7-d241-445c-9f2d-ee865a871db5";
 
-const shows = [
-  {
-    date: "Mon Sept 06 2021",
-    venue: "Ronald Lane",
-    location: "San Francisco, CA",
-  },
-  {
-    date: "Tue Sept 21 2021",
-    venue: "Pier 3 East",
-    location: "San Francisco, CA",
-  },
-  {
-    date: "Fri Oct 15 2021",
-    venue: "View Lounge",
-    location: "San Francisco, CA",
-  },
-  {
-    date: "Sat Nov 06 2021",
-    venue: "Hyatt Agency",
-    location: "San Francisco, CA",
-  },
-  {
-    date: "Fri Nov 26 2021",
-    venue: "Moscow Center",
-    location: "San Francisco, CA",
-  },
-  {
-    date: "Wed Dec 15 2021",
-    venue: "Press Club",
-    location: "San Francisco, CA",
-  },
-];
+const showsRender = () => {
+  const mainEl = document.querySelector(".shows");
 
-const mainEl = document.querySelector(".shows");
+  const sectionWrapper = document.createElement("div");
+  sectionWrapper.classList.add("shows__wrapper");
+  mainEl.appendChild(sectionWrapper);
+  const sectionHeader = document.createElement("h2");
+  sectionHeader.innerText = "Shows";
+  sectionHeader.classList.add("shows__header");
+  sectionHeader.setAttribute("id", "shows");
+  sectionWrapper.appendChild(sectionHeader);
 
-const sectionWrapper = document.createElement("div");
-sectionWrapper.classList.add("shows__wrapper");
-mainEl.appendChild(sectionWrapper);
-const sectionHeader = document.createElement("h2");
-sectionHeader.innerText = "Shows";
-sectionHeader.classList.add("shows__header");
-sectionHeader.setAttribute("id", "shows");
-sectionWrapper.appendChild(sectionHeader);
+  const showsContainer = document.createElement("div");
+  showsContainer.classList.add("shows__container");
+  mainEl.appendChild(showsContainer);
 
-const showsContainer = document.createElement("div");
-showsContainer.classList.add("shows__container");
-mainEl.appendChild(showsContainer);
+  const innerWrapper = document.createElement("div");
+  innerWrapper.classList.add("shows__secondary-wrapper");
+  showsContainer.appendChild(innerWrapper);
 
-const innerWrapper = document.createElement("div");
-innerWrapper.classList.add("shows__secondary-wrapper");
-showsContainer.appendChild(innerWrapper);
+  const sectionHeader1 = document.createElement("p");
+  sectionHeader1.innerText = "date".toUpperCase();
+  sectionHeader1.classList.add("shows__secondary-subtitle");
 
-const sectionHeader1 = document.createElement("p");
-sectionHeader1.innerText = "date".toUpperCase();
-sectionHeader1.classList.add("shows__secondary-subtitle");
+  innerWrapper.appendChild(sectionHeader1);
 
-innerWrapper.appendChild(sectionHeader1);
+  const sectionHeader2 = document.createElement("p");
+  sectionHeader2.innerText = "venue".toUpperCase();
+  sectionHeader2.classList.add("shows__secondary-subtitle");
 
-const sectionHeader2 = document.createElement("p");
-sectionHeader2.innerText = "venue".toUpperCase();
-sectionHeader2.classList.add("shows__secondary-subtitle");
+  innerWrapper.appendChild(sectionHeader2);
 
-innerWrapper.appendChild(sectionHeader2);
+  sectionHeader3 = document.createElement("p");
+  sectionHeader3.innerText = "location".toUpperCase();
+  sectionHeader3.classList.add("shows__secondary-subtitle");
+  sectionHeader3.classList.add("shows__secondary-subtitle--margin");
 
-sectionHeader3 = document.createElement("p");
-sectionHeader3.innerText = "location".toUpperCase();
-sectionHeader3.classList.add("shows__secondary-subtitle");
-sectionHeader3.classList.add("shows__secondary-subtitle--margin");
+  innerWrapper.appendChild(sectionHeader3);
 
-innerWrapper.appendChild(sectionHeader3);
+  function handleShowRowClick() {
+    const listElements = document.querySelectorAll(".shows__outer-container");
 
-/**
- * On click of a shows row, remove highlight class from
- * all rows and add highlight class to clicked row
- */
-const handleShowRowClick = () => {
-  const listElements = document.querySelectorAll(".shows__outer-container");
+    listElements.forEach((item) => {
+      item.addEventListener("click", () => {
+        // console.log(item);
+        listElements.forEach((item) => {
+          item.classList.remove("shows__outer-container--highlight");
+        });
 
-  listElements.forEach((item) => {
-    item.addEventListener("click", () => {
-      console.log(item);
-      listElements.forEach((item) => {
-        item.classList.remove("shows__outer-container--highlight");
+        item.classList.add("shows__outer-container--highlight");
+      });
+    });
+  }
+
+  const dates = () => {
+    axios.get(`${API_URL}/showdates${KEY}`).then((response) => {
+      console.log(response);
+      const datesResponse = response.data;
+      console.log(datesResponse);
+
+      datesResponse.forEach((show) => {
+        const outerContainer = document.createElement("div");
+        outerContainer.classList.add("shows__outer-container");
+        showsContainer.appendChild(outerContainer);
+
+        const innerContainer = document.createElement("article");
+        innerContainer.classList.add("shows__inner-container");
+        outerContainer.appendChild(innerContainer);
+
+        const header1 = document.createElement("p");
+        innerContainer.appendChild(header1);
+        header1.innerText = "date".toUpperCase();
+        header1.classList.add("shows__subtitle");
+
+        const dates = parseInt(show.date);
+        const showDates = new Date(dates).toLocaleString().split(",")[0];
+
+        const date = document.createElement("p");
+        date.classList.add("shows__inner-subtitle");
+        date.innerText = showDates;
+        innerContainer.appendChild(date);
+
+        const header2 = document.createElement("p");
+        innerContainer.appendChild(header2);
+        header2.innerText = "venue".toUpperCase();
+        header2.classList.add("shows__subtitle");
+
+        const venue = document.createElement("p");
+        venue.innerText = show.place;
+        venue.classList.add("shows__text");
+        innerContainer.appendChild(venue);
+
+        const header3 = document.createElement("p");
+        innerContainer.appendChild(header3);
+        header3.innerText = "location".toUpperCase();
+        header3.classList.add("shows__subtitle");
+
+        const location = document.createElement("p");
+        location.innerText = show.location;
+        location.classList.add("shows__text");
+        location.classList.add("shows__text--margin");
+        innerContainer.appendChild(location);
+
+        const submit = document.createElement("button");
+        submit.innerText = "BUY TICKETS";
+        submit.classList.add("shows__button");
+        innerContainer.appendChild(submit);
       });
 
-      item.classList.add("shows__outer-container--highlight");
+      handleShowRowClick();
     });
-  });
+  };
+
+  dates();
 };
 
-const displayDates = () => {
-  axios.get(`${API_URL}/showdates${KEY}`).then((response) => {
-    console.log(response);
-    const datesApi = response.data;
-    console.log(datesApi);
-
-    datesApi.forEach((show) => {
-      const outerContainer = document.createElement("div");
-      outerContainer.classList.add("shows__outer-container");
-      showsContainer.appendChild(outerContainer);
-
-      const innerContainer = document.createElement("article");
-      innerContainer.classList.add("shows__inner-container");
-      outerContainer.appendChild(innerContainer);
-
-      const header1 = document.createElement("p");
-      innerContainer.appendChild(header1);
-      header1.innerText = "date".toUpperCase();
-      header1.classList.add("shows__subtitle");
-
-      const dates = parseInt(show.date);
-      const showDates = new Date(dates).toLocaleString().split(",")[0];
-
-      const date = document.createElement("p");
-      date.classList.add("shows__inner-subtitle");
-      date.innerText = showDates;
-      innerContainer.appendChild(date);
-
-      const header2 = document.createElement("p");
-      innerContainer.appendChild(header2);
-      header2.innerText = "venue".toUpperCase();
-      header2.classList.add("shows__subtitle");
-
-      const venue = document.createElement("p");
-      venue.innerText = show.place;
-      venue.classList.add("shows__text");
-      innerContainer.appendChild(venue);
-
-      const header3 = document.createElement("p");
-      innerContainer.appendChild(header3);
-      header3.innerText = "location".toUpperCase();
-      header3.classList.add("shows__subtitle");
-
-      const location = document.createElement("p");
-      location.innerText = show.location;
-      location.classList.add("shows__text");
-      location.classList.add("shows__text--margin");
-      innerContainer.appendChild(location);
-
-      const submit = document.createElement("button");
-      submit.innerText = "BUY TICKETS";
-      submit.classList.add("shows__button");
-      innerContainer.appendChild(submit);
-    });
-
-    handleShowRowClick();
-  });
-};
-
-displayDates();
-
-// for (let i = 0; i < shows.length; i++) {
-//   displayDates(shows[i]);
-// }
-
-//**-- the plan for below was to change the background of everything that's not clicked. However i could not figure out how to get nth child or type to work on the button.
-
-// const showsSelected = document.querySelectorAll(".shows__button");
-// showsSelected.forEach((item) => {
-//   item.addEventListener("click", (e) => {
-//     const containerClick = document
-//       .querySelector(".shows__outer-container:nth-child(2)")
-//       .classList.add("shows__outer-container--highlight");
-
-//     const containerClick1 = document
-//       .querySelector(".shows__outer-container:nth-child(1)")
-//       .classList.add("shows__outer-container--unactive");
-
-//     const containerClick2 = document
-//       .querySelector(".shows__outer-container:nth-child(4)")
-//       .classList.add("shows__outer-container--unactive");
-
-//     const containerClick3 = document
-//       .querySelector(".shows__outer-container:nth-child(5)")
-//       .classList.add("shows__outer-container--unactive");
-
-//     const containerClick4 = document
-//       .querySelector(".shows__outer-container:nth-child(6)")
-//       .classList.add("shows__outer-container--unactive");
-
-//     const containerClick6 = document
-//       .querySelector(".shows__outer-container:nth-child(7)")
-//       .classList.add("shows__outer-container--unactive");
-//   });
-// });
-
-// const showsSelectedSecond = document.querySelector(
-//   ".shows__button:nth-of-type(3)"
-// );
-// showsSelectedSecond.addEventListener("click", (e) => {
-//   const secondcontainerClick = document
-//     .querySelector(".shows__outer-container:nth-child(2)")
-//     .classList.add("shows__outer-container--highlight");
-
-//   const secondcontainerClick1 = document
-//     .querySelector(".shows__outer-container:nth-child(3)")
-//     .classList.add("shows__outer-container--unactive");
-
-//   const secondcontainerClick2 = document
-//     .querySelector(".shows__outer-container:nth-child(4)")
-//     .classList.add("shows__outer-container--unactive");
-
-//   const secondcontainerClick3 = document
-//     .querySelector(".shows__outer-container:nth-child(5)")
-//     .classList.add("shows__outer-container--unactive");
-
-//   const secondcontainerClick4 = document
-//     .querySelector(".shows__outer-container:nth-child(6)")
-//     .classList.add("shows__outer-container--unactive");
-
-//   const secondcontainerClick6 = document
-//     .querySelector(".shows__outer-container:nth-child(7)")
-//     .classList.add("shows__outer-container--unactive");
-// });
-
-// const click = document.querySelector(".form__input");
-// click.addEventListener("click", () => {
-//   click.style.outlinecolor = "black";
-// });
-
-// const showsSelected = document.querySelectorAll(".shows__button");
-// showsSelected.forEach((item) => {
-//   item.addEventListener("click", (e) => {
-//     const containerClick = document.querySelectorAll(".shows__outer-container");
-//     containerClick.forEach((item) => {
-//       item.style.background = "black";
-//     });
-//   });
-// });
-
-// const click = document.querySelector(".form__input");
-// click.addEventListener("click", () => {
-//   click.style.outlinecolor = "black";
-// });
+showsRender();

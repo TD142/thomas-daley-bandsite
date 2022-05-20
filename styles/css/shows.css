@@ -420,6 +420,7 @@ a {
 .form__input {
   background: #fafafa;
   border: 1px solid #e1e1e1;
+  outline-color: black;
   border-radius: 4px;
   margin-bottom: 1rem;
   height: 2.3rem;
@@ -438,6 +439,9 @@ a {
     margin-bottom: 2rem;
     font-size: 0.875rem;
   }
+}
+.form__input--outline {
+  outline-color: red;
 }
 .form__label {
   color: #afafaf;
