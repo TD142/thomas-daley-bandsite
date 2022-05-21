@@ -3,6 +3,8 @@ const KEY = "?api_key=f85dd6f7-d241-445c-9f2d-ee865a871db5";
 
 const FULL_URL = `${API_URL}/comments${KEY}`;
 
+// ** function to retrieve the api response and looping over creating required dom elements/classes.
+
 const displayComments = () => {
   axios.get(`${API_URL}/comments${KEY}`).then((response) => {
     console.log(response);
@@ -50,24 +52,32 @@ const displayComments = () => {
 
 displayComments();
 
-const contentEl = document.querySelector(".comments"); // TODO: use id
+// ** Event handler to post new comment on submit, adding to the API.
+
+const contentEl = document.getElementById("comments");
 
 const submitForm = (event) => {
   console.log(event);
   event.preventDefault();
 
-  const formInput = document.querySelectorAll(".form__input");
+  // Attempted to add error outline as red. However adding required attributed within html was causing red state on page load. I attempted to create on submit event instead, however this requires the user to submit twice for it to work. Based on this decided a better ux experience was to keep as black.
 
-  if (event.target.addName.value == "" || event.target.addComment.value == "") {
-    formInput.forEach((item) => {
-      item.classList.add("form__input--outline");
-    });
-    return;
-  } else {
-    formInput.forEach((item) => {
-      item.classList.remove("form__input--outline");
-    });
-  }
+  // const formInput = document.querySelectorAll(".form__input");
+  // formInput.forEach((item) => {
+  //   item.setAttribute("required", "");
+  // });
+
+  // if (event.target.addName.value == "" || event.target.addComment.value == "") {
+  //   formInput.forEach((item) => {
+  //     item.classList.add("form__input--outline");
+  //   });
+
+  //   return;
+  // } else {
+  //   formInput.forEach((item) => {
+  //     item.classList.remove("form__input--outline");
+  //   });
+  // }
 
   contentEl.innerText = "";
 

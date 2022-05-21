@@ -1,6 +1,7 @@
 const API_URL = "https://project-1-api.herokuapp.com";
 const KEY = "?api_key=f85dd6f7-d241-445c-9f2d-ee865a871db5";
 
+// ** Function to render DOM creating required elements/classes.
 const showsRender = () => {
   const mainEl = document.querySelector(".shows");
 
@@ -40,12 +41,13 @@ const showsRender = () => {
 
   innerWrapper.appendChild(sectionHeader3);
 
+  // event handler removing class from all items and then adding class to target item to change focus state.
+
   function handleShowRowClick() {
     const listElements = document.querySelectorAll(".shows__outer-container");
 
     listElements.forEach((item) => {
       item.addEventListener("click", () => {
-        // console.log(item);
         listElements.forEach((item) => {
           item.classList.remove("shows__outer-container--highlight");
         });
@@ -54,6 +56,8 @@ const showsRender = () => {
       });
     });
   }
+
+  // retrieves API response, loops over and creates DOM elements for each iteration, as well as displaying the response with inner text.
 
   const dates = () => {
     axios.get(`${API_URL}/showdates${KEY}`).then((response) => {

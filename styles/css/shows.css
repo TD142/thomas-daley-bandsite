@@ -528,9 +528,6 @@ a {
 .shows__outer-container:hover {
   background: #fafafa;
 }
-.shows__outer-container:active {
-  background: #e1e1e1;
-}
 .shows__outer-container--highlight {
   background: #e1e1e1;
 }
