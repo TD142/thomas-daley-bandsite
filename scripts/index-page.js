@@ -54,7 +54,7 @@ displayComments();
 
 // ** Event handler to post new comment on submit, adding to the API.
 
-const contentEl = document.getElementById("comments");
+const contentEl = document.querySelector(".comments");
 
 const submitForm = (event) => {
   console.log(event);
@@ -62,22 +62,22 @@ const submitForm = (event) => {
 
   // Attempted to add error outline as red. However adding required attributed within html was causing red state on page load. I attempted to create on submit event instead, however this requires the user to submit twice for it to work. Based on this decided a better ux experience was to keep as black.
 
-  // const formInput = document.querySelectorAll(".form__input");
-  // formInput.forEach((item) => {
-  //   item.setAttribute("required", "");
-  // });
+  const formInput = document.querySelectorAll(".form__input");
+  formInput.forEach((item) => {
+    item.setAttribute("required", "");
+  });
 
-  // if (event.target.addName.value == "" || event.target.addComment.value == "") {
-  //   formInput.forEach((item) => {
-  //     item.classList.add("form__input--outline");
-  //   });
+  if (event.target.addName.value == "" || event.target.addComment.value == "") {
+    formInput.forEach((item) => {
+      item.classList.add("form__input--outline");
+    });
 
-  //   return;
-  // } else {
-  //   formInput.forEach((item) => {
-  //     item.classList.remove("form__input--outline");
-  //   });
-  // }
+    return;
+  } else {
+    formInput.forEach((item) => {
+      item.classList.remove("form__input--outline");
+    });
+  }
 
   contentEl.innerText = "";
 

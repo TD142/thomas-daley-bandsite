@@ -1,21 +1,6 @@
 @use "./mixins" as *;
 @use "./variables" as *;
-
-@font-face {
-  font-family: avenir-next-regular;
-
-  src: url(../../assets/fonts/AvenirNextLTPro-Regular.otf);
-}
-
-@font-face {
-  font-family: avenir-next-demi;
-  src: url(../../assets/fonts/AvenirNextLTPro-Demi.otf);
-}
-
-@font-face {
-  font-family: avenir-next-bold;
-  src: url(../../assets/fonts/AvenirNextLTPro-Bold.otf);
-}
+@use "./typography" as *;
 
 ::before::after {
   box-sizing: border-box;
