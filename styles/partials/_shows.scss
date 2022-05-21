@@ -43,19 +43,15 @@
     border-bottom: 1px solid $mercury;
     margin-top: 1rem;
 
-    &:hover {
-      background: $alabaster;
-    }
-
-    &--highlight {
-      background: $mercury;
-    }
-
-    &--unactive {
-      background: green;
-    }
     @include tablet {
       margin: 0 1rem;
+      &:hover {
+        background: $alabaster;
+      }
+
+      &--highlight {
+        background: $mercury;
+      }
     }
   }
 

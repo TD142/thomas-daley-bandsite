@@ -525,18 +525,15 @@ a {
   border-bottom: 1px solid #e1e1e1;
   margin-top: 1rem;
 }
-.shows__outer-container:hover {
-  background: #fafafa;
-}
-.shows__outer-container--highlight {
-  background: #e1e1e1;
-}
-.shows__outer-container--unactive {
-  background: green;
-}
 @media (min-width: 768px) {
   .shows__outer-container {
     margin: 0 1rem;
+  }
+  .shows__outer-container:hover {
+    background: #fafafa;
+  }
+  .shows__outer-container--highlight {
+    background: #e1e1e1;
   }
 }
 .shows__inner-container {
