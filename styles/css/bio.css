@@ -621,6 +621,7 @@ a {
 }
 .comments__secondary-text {
   margin-top: 0;
+  word-break: break-word;
 }
 .comments__item {
   color: #afafaf;
