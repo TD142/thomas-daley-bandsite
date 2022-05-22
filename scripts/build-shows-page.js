@@ -61,9 +61,7 @@ const showsRender = () => {
 
   const dates = () => {
     axios.get(`${API_URL}/showdates${KEY}`).then((response) => {
-      console.log(response);
       const datesResponse = response.data;
-      console.log(datesResponse);
 
       datesResponse.forEach((show) => {
         const outerContainer = document.createElement("div");
