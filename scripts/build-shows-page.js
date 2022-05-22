@@ -78,7 +78,12 @@ const showsRender = () => {
         header1.classList.add("shows__subtitle");
 
         const dates = parseInt(show.date);
-        const showDates = new Date(dates).toLocaleString().split(",")[0];
+        const showDates = new Date(dates)
+          .toUTCString()
+          .split(" ")
+          .slice(0, 4)
+          .join(" ");
+        console.log(showDates);
 
         const date = document.createElement("p");
         date.classList.add("shows__inner-subtitle");
