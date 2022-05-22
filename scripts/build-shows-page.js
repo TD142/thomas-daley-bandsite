@@ -57,7 +57,7 @@ const showsRender = () => {
     });
   }
 
-  // retrieves API response, loops over and creates DOM elements for each iteration, as well as displaying the response with inner text.
+  // Retrieves API response, loops over and creates DOM elements for each iteration, as well as displaying the response with inner text.
 
   const dates = () => {
     axios.get(`${API_URL}/showdates${KEY}`).then((response) => {

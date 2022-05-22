@@ -3,7 +3,7 @@ const KEY = "?api_key=f85dd6f7-d241-445c-9f2d-ee865a871db5";
 
 const FULL_URL = `${API_URL}/comments${KEY}`;
 
-// ** function to retrieve the api response and looping over creating required dom elements/classes.
+// ** Function to retrieve the api response and looping over creating required dom elements/classes.
 
 const displayComments = () => {
   axios.get(`${API_URL}/comments${KEY}`).then((response) => {
