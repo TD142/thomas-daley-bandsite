@@ -7,9 +7,7 @@ const FULL_URL = `${API_URL}/comments${KEY}`;
 
 const displayComments = () => {
   axios.get(`${API_URL}/comments${KEY}`).then((response) => {
-    console.log(response);
     const commentsResponse = response.data;
-    console.log(commentsResponse);
 
     commentsResponse.reverse().forEach((comment) => {
       const itemDiv = document.createElement("article");
@@ -57,27 +55,7 @@ displayComments();
 const contentEl = document.querySelector(".comments");
 
 const submitForm = (event) => {
-  console.log(event);
   event.preventDefault();
-
-  // Attempted to add error outline as red. However adding required attributed within html was causing red state on page load. I attempted to create on submit event instead, however this requires the user to submit twice for it to work. Based on this decided a better ux experience was to keep as black.
-
-  const formInput = document.querySelectorAll(".form__input");
-  formInput.forEach((item) => {
-    item.setAttribute("required", "");
-  });
-
-  if (event.target.addName.value == "" || event.target.addComment.value == "") {
-    formInput.forEach((item) => {
-      item.classList.add("form__input--outline");
-    });
-
-    return;
-  } else {
-    formInput.forEach((item) => {
-      item.classList.remove("form__input--outline");
-    });
-  }
 
   contentEl.innerText = "";
 
@@ -95,8 +73,6 @@ const submitForm = (event) => {
   axios
     .post(`${API_URL}/comments${KEY}`, submitData, config)
     .then((response) => {
-      console.log(response);
-
       displayComments();
     });
 

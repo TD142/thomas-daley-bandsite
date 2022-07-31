@@ -544,6 +544,9 @@ a {
     font-size: 0.875rem;
   }
 }
+.form__input--outline {
+  border: 2px solid red;
+}
 .form__label {
   color: #afafaf;
   font-weight: 450;

@@ -83,7 +83,6 @@ const showsRender = () => {
           .split(" ")
           .slice(0, 4)
           .join(" ");
-        console.log(showDates);
 
         const date = document.createElement("p");
         date.classList.add("shows__inner-subtitle");
