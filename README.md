@@ -4,4 +4,4 @@ Academic work for mock band site. Demonstrates responsive design as well as work
 
 ## Using the project
 
-Download and open the index file to view the site.
+edit the html, scss and JS files in a code editor. View the site by opening index.html
